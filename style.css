@@ -1,0 +1,1474 @@
+@font-face {
+    font-family: "Proxima Nova";
+    src: url("ProximaNova/Proxima\ Nova\ Regular.otf");
+}
+
+@font-face {
+    font-family: "Proxima Nova SemiBold";
+    src: url("ProximaNova/Proxima\ Nova\ Semibold.otf");
+}
+
+@font-face {
+    font-family: "Proxima Nova Bold";
+    src: url("ProximaNova/Proxima\ Nova\ Bold.otf");
+}
+
+body { font-family: "Proxima Nova", serif }
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-color: inherit;
+}
+
+.container {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 1322px;
+    position: relative;
+    padding: 0 20px;
+    overflow: hidden;
+}
+
+.filter {
+    box-shadow: 0px 8px 8px rgba(204, 204, 204, 0.2);
+}
+
+.filter .container {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 25px 20px 4px 20px;
+}
+
+input , select{
+    width: 220px;
+    height: 40px;
+
+    /* Light grey */
+
+    border: 1px solid #CCCCCC;
+    border-radius: 5px;
+    margin-right: 30px;
+
+    font-family: Proxima Nova;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 19px;
+
+    /* Black */
+
+    color: #252525;
+    margin-bottom: 20px;
+
+    padding: 0 10px;
+}
+
+.filter__select:nth-child(2), .filter__select:nth-child(3) {
+    width: 280px;
+}
+
+.input_filter {
+    min-width: 280px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    max-height: 40px;
+}
+
+.input_filter input {
+    width: 127px;
+    margin: 0;
+}
+
+.input_filter .line {
+    width: 14px;
+    height: 1px;
+    background-color: #CCCCCC;
+}
+
+.view_filter {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 280px;
+    height: 40px;
+
+    /* Red */
+
+    background: #D92A22;
+    border-radius: 5px;
+    color: #fff;
+    border: 0;
+    margin-left: 30px;
+
+    cursor: pointer;
+}
+
+
+.bread_crumbs {
+    font-family: Proxima Nova;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+    color: #939393;
+    margin-top: 20px;
+}
+
+.bread_crumbs .container {
+    display: flex;
+}
+
+.bread_crumbs .container .slash {
+    margin: 0 10px;
+}
+
+.title {
+    font-family: Proxima Nova SemiBold;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 35px;
+    line-height: 43px;
+
+    color: #252525;
+}
+
+.categories {
+    margin-top: 60px;
+}
+
+.categories__items {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 84%;
+    margin-top: 24px;
+}
+
+.categories__items .item {
+    font-family: Proxima Nova;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+
+    color: #252525;
+    padding: 6.5px 12px;
+    background: #F1F1F1;
+    border-radius: 63px;
+    width: auto;
+    margin-right: 16px;
+    margin-bottom: 16px;
+}
+
+.categories__items .item.active {
+    background: #D92A22;
+    color: #FFFFFF;
+}
+
+.categories__items .item:hover {
+    background: #D92A22;
+    color: #FFFFFF;
+}
+
+.categories__items .all_view {
+    font-family: Proxima Nova;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 17px;
+    color: #D92A22;
+    margin-bottom: 16px;
+    cursor: pointer;
+}
+
+.sort {
+    margin-top: 33px;
+}
+
+.sort .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.sort_select {
+    width: 300px;
+    max-width: 100%;
+}
+
+.column_select {display: flex;}
+
+.column_select .on_map {
+    display: flex;
+    align-items: center;
+    font-family: Proxima Nova;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+
+    color: #252525;
+    margin-right: 33px;
+}
+
+.icon {
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.icon_map {
+    background-image: url(img/map.svg);
+    width: 9px;
+    height: 11px;
+    margin-right: 6px;
+}
+
+.icon_col {
+    background-image: url(img/column.svg);
+    width: 29px;
+    height: 26px;
+    margin-right: 16px;
+}
+
+.icon_grid {
+    background-image: url(img/grid.svg);
+    width: 25px;
+    height: 25px;
+}
+
+.sort_cards {
+    margin-bottom: 30px;
+}
+
+.sort_cards .container{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.sort_cards .card {
+    width: 298px;
+    max-width: 100%;
+    height: 495px;
+    background-color: #fff;
+    filter: drop-shadow(0px 0px 8px rgba(147, 147, 147, 0.3));
+    border-radius: 5px;
+    overflow: hidden;
+    margin-bottom: 30px;
+    transition: 0.3s;
+}
+
+.sort_cards .card:hover {
+    filter: drop-shadow(0px 8px 25px rgba(115, 115, 115, 0.7));
+}
+
+.sort_cards .card:not(:nth-child(4n)) {
+    margin-right: 30px;
+} 
+
+.sort_cards .card .card_img {
+    width: 100%;
+    height: 218px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sort_cards .card .card_info{
+    padding: 16px 10px;
+}
+
+.sort_cards .card .card_info .card_title {
+    font-family: Proxima Nova;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 22px;
+    color: #252525;
+    transition: 0.3s;
+}
+
+.sort_cards .card:hover .card_info .card_title {
+    color: #D92A22;
+}
+
+.sort_cards .card .card_info .card_map {
+    display: flex;
+    align-items: center;
+    margin-top: 6px;
+}
+
+.sort_cards .card .card_info .card_map .icon_map {
+    margin-right: 6px;
+}
+
+.sort_cards .card .card_info .card_map p {
+    font-family: Proxima Nova;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 15px;
+    color: #939393;
+}
+
+.sort_cards .card .card_info .card_price {
+    margin-top: 20px;
+}
+
+.sort_cards .card .card_info .card_price .card_price_title{
+    font-family: Proxima Nova;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 15px;
+    color: #939393;
+    margin-bottom: 6px;
+}
+
+.sort_cards .card .card_info .card_price .square_num {
+    margin-top: 4px;
+    margin-bottom: 20px;
+}
+
+.sort_cards .card .card_info .card_price .price_num,
+.sort_cards .card .card_info .card_price .square_num
+{
+    display: flex;
+    align-items: center;
+}
+
+.sort_cards .card .card_info .card_price .price_num .line,
+.sort_cards .card .card_info .card_price .square_num .line {
+    width: 10px;
+    height: 1px;
+    background-color: #252525;
+    margin: 0 5px;
+}
+
+.sort_cards .card .card_info .card_price .price_num p{
+    font-family: Proxima Nova;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 22px;
+    color: #252525;
+}
+
+
+.sort_cards .card .card_info .card_price .square_num p  {
+    font-family: Proxima Nova;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+    color: #252525;
+}
+
+.sort_cards .card .card_info .card_status .card_status_title{
+    font-family: Proxima Nova;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 15px;
+    color: #939393;
+    margin-bottom: 6px;
+}
+
+
+.sort_cards .card .card_info .card_status .term_status{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.sort_cards .card .card_info .card_status .term_status p:first-child {
+    font-family: Proxima Nova;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+    color: #252525;
+}
+
+.sort_cards .card .card_info .card_status .term_status p:last-child {
+    font-family: Proxima Nova;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 15px;
+    color: #939393;
+}
+
+.sort_cards .card .card_btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    width: 100%;
+    height: 40px;
+    background: #FFFFFF;
+    border: 1px solid #CCCCCC;
+    border-radius: 6px;
+
+    /*font*/
+    font-family: Proxima Nova;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 17px;
+    text-transform: uppercase;
+    color: #D92A22;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.sort_cards .card:hover .card_btn {
+    background: #D92A22;
+    color: #FFFFFF;
+}
+
+.banner_help {
+    width: 100%;
+    min-height: 404px;
+    background-image: url(img/banner_help.png);
+    background-size: cover;
+    background-position: left;
+    border-radius: 16px;
+    margin-bottom: 60px;
+    display: flex;
+    align-items: center;
+    padding: 3%;
+}
+
+.banner_help input {
+    background: rgba(255, 255, 255, 0.7);
+    /* Light grey */
+
+    border: 1px solid #CCCCCC;
+    box-sizing: border-box;
+    border-radius: 5px;
+
+    font-family: Proxima Nova;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 19px;
+    
+    /* Dark grey */
+    
+    color: #939393;
+
+    width: 298px;
+    height: 40px;
+
+    max-width: 100%;
+
+}
+
+.banner_btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    width: 200px;
+    max-width: 100%;
+    height: 40px;
+    border: 0;
+    border-radius: 6px;
+
+    /*font*/
+    font-family: Proxima Nova;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 17px;
+    text-transform: uppercase;
+    transition: 0.3s;
+    cursor: pointer;
+
+    background: #D92A22;
+    color: #FFFFFF;
+}
+
+.form_info {
+    font-family: Proxima Nova;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 15px;
+    /* identical to box height */
+
+
+    /* Light grey */
+
+    color: #CCCCCC;
+    margin-top: 8px;
+}
+
+.banner_help .banner_info {
+    max-width: 100%;
+}
+
+.banner_help .banner_info_text{
+    font-family: Proxima Nova SemiBold;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 140%;
+    color: #FFFFFF;
+    margin-bottom: 40px;
+    width: 626px;
+    max-width: 100%;
+}
+
+.banner_help .banner_title {
+    font-family: Proxima Nova SemiBold;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 35px;
+    line-height: 43px;
+    color: #FFFFFF;
+    margin-bottom: 8px;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    font-family: Proxima Nova Bold;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 20px;
+    color: #212B36;
+}
+
+.pagination div:not(:last-child) {
+    margin-right: 20px;
+}
+
+.pagination .pag_left, .pagination .pag_right  {
+    background-image: url(img/right.svg);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    /* Light grey */
+
+    border: 1px solid #CCCCCC;
+    box-sizing: border-box;
+    border-radius: 4px;
+    width: 32px;
+    height: 32px;
+
+    transform: rotate(180deg);
+    cursor: pointer;
+}
+
+.pagination .pag_right {
+    transform: rotate(0deg);
+} 
+
+.pagination .pag_num, .pagination .pag_ellipsis {
+    width: 32px;
+    height: 32px;   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: #FFFFFF;    
+    border: 1px solid #CCCCCC;
+    box-sizing: border-box;
+    border-radius: 4px;
+
+    cursor: pointer;
+}
+
+.pagination .pag_ellipsis.active, .pagination .pag_num.active,
+.pagination .pag_ellipsis:hover, .pagination .pag_num:hover {
+    border: 1px solid #D92A22;
+    color: #D92A22;
+}
+
+.dignity {
+    margin-top: 90px;
+    margin-bottom: 120px;
+}
+
+.dignity .subtitle {
+    margin-top: 20px;
+    font-family: Proxima Nova SemiBold;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 140%;
+    color: #939393;
+    margin-bottom: 50px;
+}
+
+.dignity_items {
+    display: flex;
+    flex-wrap: wrap;
+} 
+
+.dignity_item {
+    width: 298px;
+    height: 262px;
+    padding: 30px 16px;
+    background: #FFFFFF;
+    /* тень карточки */
+    
+    box-shadow: 0px 0px 8px rgba(147, 147, 147, 0.3);
+    border-radius: 16px;
+}
+
+.dignity_item:not(:last-child) {
+    margin-right: 30px;
+}
+
+.degnity_true {
+    background-image: url(img/degnity_true.svg);
+    width: 70px;
+    height: 70px;
+    margin-bottom: 25px;
+}
+
+.dignity_title {
+    font-family: Proxima Nova SemiBold;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 140%;
+    color: #000000;
+    margin-bottom: 16px;
+}
+
+.dignity_text {
+    font-family: Proxima Nova;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 140%;
+    /* or 22px */
+
+
+    color: #000000;
+}
+
+.selection {
+    margin-bottom: 120px;
+}
+
+.selection_items {
+    display: flex;
+    flex-wrap: wrap;
+} 
+
+.selection_item {
+    width: 626px;
+    height: 262px;
+    position: relative;
+    background: #F4F4F4;
+    border-radius: 16px;
+    padding: 47px 40px;
+    overflow: hidden;
+}
+
+.selection_item:first-child {
+    margin-right: 30px;
+}
+
+.selection_item img {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+.selection_title {
+    font-family: Proxima Nova Semibold;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 35px;
+    line-height: 43px;
+    color: #252525;
+}
+
+.selection_text {
+    margin-top: 8px;
+    font-family: Proxima Nova;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 140%;
+    color: #000000;
+    max-width: 325px;
+    margin-bottom: 20px;
+}
+
+.selection_more {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 160px;
+    height: 40px;
+    background: #D92A22;
+    border-radius: 5px;
+
+    font-family: Proxima Nova Semibold;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 17px;
+    /* identical to box height */
+
+    text-transform: uppercase;
+
+    /* white */
+
+    color: #FFFFFF;
+
+}
+
+.consultation {
+    width: 100%;
+    min-height: 579px;
+    padding: 40px;
+    background: #F4F4F4;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 120px;
+}
+
+.consultation img {
+    margin-right: 30px;
+}
+
+.consultation_title {
+    font-family: Proxima Nova Semibold; 
+    font-style: normal;
+    font-weight: 600;
+    font-size: 35px;
+    line-height: 43px;
+    margin-bottom: 50px;
+    color: #252525;
+}
+
+.consultation_name {
+    font-family: Proxima Nova Semibold;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 37px;
+    color: #D92A22;
+    margin-bottom: 10px;
+}
+
+.consultation_profession {
+    margin-bottom: 30px;
+    font-family: Proxima Nova;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 22px;
+    color: #939393;
+}
+
+.consultation_phone {
+    margin-bottom: 14px;
+}
+
+.icon_phone {
+    width: 18px;
+    height: 25px;
+    margin-right: 13px;
+    background-image: url(img/phone.svg);
+}
+
+.consultation .icon_email {
+    width: 24px;
+    height: 20px;
+    margin-right: 11px;
+    background-image: url(img/mail.svg);
+}
+
+.consultation .icon_viber {
+    width: 23.71px;
+    height: 25px;
+    margin-right: 10px;
+    background-image: url(img/viber.svg);
+}
+
+.consultation .icon_whatsapp {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+    background-image: url(img/whatsapp.svg);
+}
+
+.consultation_phone, .consultation_email {
+    font-family: Proxima Nova;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 22px;
+    color: #252525;
+
+    display: flex;
+    align-items: center;
+}
+
+.consultation_messanger {
+    display: flex;
+    margin-top: 50px;
+}
+
+.consultation_viber, .consultation_whatsapp {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 237px;
+    height: 40px;
+    max-width: 237px;
+    background: #7360F2;
+    border: 1px solid #7360F2;
+    border-radius: 6px;
+
+    font-family: Proxima Nova Semibold;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 17px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+}
+
+.consultation_whatsapp {
+    background: #40C351;
+    border: 1px solid #40C351;
+    margin-left: 16px;
+}
+
+.dop_text .title {
+    margin-bottom: 50px;
+}
+
+.dop_text .text {
+    font-family: Proxima Nova;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 25px;
+    color: #252525;
+    margin-bottom: 20px;
+}
+
+.tags {
+    background: #F1F1F1;
+}
+
+.tags .container {
+    padding: 50px 20px;
+}
+
+.tags .tags_items {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.tags .tags_items .tags_item {
+    font-family: Proxima Nova;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+    color: #939393;
+}
+
+.tags .tags_items .tags_item:not(:last-child) {
+    margin-right: 30px;
+} 
+
+.tags .tags_items .tags_item:last-child {
+    margin-top: 16px;
+}
+
+.tags .tags_items:not(:first-child) {
+    margin-top: 20px;
+}
+
+
+
+
+.grid_card {
+    display: block;
+}
+
+
+.column_list {
+    margin-bottom: 120px;
+    margin-top: 30px;
+}
+
+
+.column_card {
+    background: #FFFFFF;
+    box-shadow: 0px 0px 8px rgba(147, 147, 147, 0.3);
+    border-radius: 5px;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    padding: 12px;
+    display: flex;
+}
+
+.column_card:not(:first-child) {
+    margin-top: 30px;
+} 
+
+.column_card .card_img{
+    border-radius: 5px;
+    width: 399px;
+    max-width: 100%;
+    height: 218px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.column_card_info {
+    width: 100%;
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
+.column_card_info .title_bar {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.column_card_info .title_bar .left {
+    display: flex;
+    align-items: center;
+    font-family: Proxima Nova Semibold;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 22px;
+    color: #252525;
+}
+
+.column_card_info .title_bar .left .on_map {
+    display: flex;
+    align-items: center;
+    margin-left: 30px;
+
+    font-family: Proxima Nova;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 15px;
+    color: #939393;
+}
+
+.column_card_info .title_bar .page_num {  
+    font-family: Proxima Nova;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+    color: #939393;
+}
+
+.column_card_desc {
+    font-family: Proxima Nova;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 24px;
+    color: #252525;
+    width: 625px;
+    max-width: 100%;
+    margin-bottom: 36px;
+}
+
+.column_card_line {
+    display: flex;
+    font-family: Proxima Nova;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 15px;
+
+    color: #939393;
+}
+
+.column_card_line .status {
+    display: flex;
+    margin-right: 20px;
+    align-items: flex-end;
+}
+
+.column_card_line .num_house p, .column_card_line .status p {
+    margin-left: 16px;
+    font-family: Proxima Nova;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+    /* identical to box height */
+
+
+    /* Black */
+
+    color: #252525;
+
+}
+
+.column_card_line .num_house {
+    display: flex;
+    align-items: flex-end;
+    margin-right: 20px;
+}
+
+.column_card_text_info {
+    display: flex;
+    justify-content: space-between;
+}
+
+.column_card_text_info .right {
+    width: 277px;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.column_card_text_info .right .card_price .card_price_title{
+    font-family: Proxima Nova;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 15px;
+    color: #939393;
+    margin-bottom: 6px;
+}
+
+.column_card_text_info .right .card_price .square_num {
+    margin-top: 4px;
+    margin-bottom: 20px;
+}
+
+.column_card_text_info .right .card_price .price_num,
+.column_card_text_info .right .card_price .square_num
+{
+    display: flex;
+    align-items: center;
+}
+
+.column_card_text_info .right .card_price .price_num .line,
+.column_card_text_info .right .card_price .square_num .line {
+    width: 10px;
+    height: 1px;
+    background-color: #252525;
+    margin: 0 5px;
+}
+
+.column_card_text_info .right .card_price .price_num p{
+    font-family: Proxima Nova;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 22px;
+    color: #252525;
+}
+
+
+.column_card_text_info .right .card_price .square_num p  {
+    font-family: Proxima Nova;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+    color: #252525;
+}
+
+.column_list .column_card .card_btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    width: 100%;
+    height: 40px;
+    background: #FFFFFF;
+    border: 1px solid #CCCCCC;
+    border-radius: 6px;
+
+    /*font*/
+    font-family: Proxima Nova;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 17px;
+    text-transform: uppercase;
+    color: #D92A22;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.column_list .column_card:hover .card_btn {
+    border: 1px solid #D92A22;
+    background: #D92A22;
+    color: #FFFFFF;
+}
+
+.sort_cards .card:hover {
+    background-color: #F1F1F1;
+}
+
+.column_list .pagination {
+    margin-top: 50px;
+}
+
+.on_map.mobile_filter {
+    display: none;
+}
+
+.on_map.mobile_filter .icon_map {
+    width: 14px;
+    height: 14px;
+    background-image: url(img/filter.svg);
+}
+
+.container.container_mobile {
+    display: none;
+}
+
+.grid_card_bottom {
+    display: block;
+}
+
+.desk_icon {
+    display: block;
+}
+
+.mobile_icon {
+    display: none;
+}
+
+.pagination_mobile {
+    display: none;
+}
+
+.icon_select {   
+    z-index: -1;
+    position: absolute;
+    right: 40px;
+    top: 12px;
+    width: 18px;
+    height: 19px;
+    background-image: url(img/select_input.svg);
+}
+
+.select_element {
+    position: relative;
+}
+
+.varioses {
+    margin-top: 36px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.varios p.varios_title{
+    font-family: Proxima Nova Semibold;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 19px;
+
+    /* Black */
+
+    color: #252525;
+
+}
+
+.varios p.varios_price {
+    font-family: Proxima Nova;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    color: #252525;
+    margin-top: 9px;
+}
+
+.varios {
+    width: 33%;
+}
+
+.varios:first-child {
+    margin-bottom: 23px;
+}
+
+.column_list .column_card .card_btn {
+    position: absolute;
+    bottom: 0;
+}
+
+.column_card_text_info .right {
+    position: relative;
+}
+
+.image_texts {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    font-family: Proxima Nova;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 10px;
+    line-height: 12px;
+    /* Black */
+
+    color: #252525;
+}
+
+.image_text:not(:first-child) {
+    margin-top: 3px;
+}
+
+.image_text {
+    padding: 4px 10px;
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(20px);
+    border-radius: 4px;
+    width: auto;
+}
+
+.card_img {
+    position: relative;
+}
+
+            /*todo width*/ 
+
+            .image_text:last-child {
+                width: 65px;
+            }
+
+            .image_text:nth-child(2) {
+                width: 102px;
+            }
+
+            /*todo width*/ 
+
+.image_rating {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    right: 8px;
+    top: 8px;
+    background: #FFFFFF;
+    border-radius: 4px;
+
+    padding: 2.5px 10px;
+
+    font-family: Proxima Nova;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 10px;
+    line-height: 12px;
+
+    /* Dark grey */
+
+    color: #939393;
+
+}
+
+.rating_col_reviews {
+    margin-left: 10px;
+}
+
+.icon_rating {
+    background-image: url(img/Star.svg);
+    margin-right: 3px;
+    width: 15px;
+    height: 15px;
+}
+
+.column_select .on_map {
+    padding-top: 1.5px;
+    width: 98.85px;
+    height: 25px;
+    left: 1171.29px;
+    top: 593px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.column_select .on_map:hover .icon_map{
+    background-image: url(img/map_white.svg);
+}
+
+
+.column_select .on_map:hover {
+    padding-top: 1.5px;
+    width: 98.85px;
+    height: 25px;
+    left: 1171.29px;
+    top: 593px;
+    background: #D92A22;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+} 
+
+.selection_more {
+}
+
+.selection_text {
+    position: relative;
+    z-index: 10;
+}
+
+
+
+.map_select {
+    position: relative;
+}
+
+.map_on_block {
+    position: absolute;
+    width: 250px;
+    height: auto;
+    background: #FFFFFF;
+    border-radius: 5px;
+    top: 16px;
+    right: 16px;
+    padding: 16px 22px;
+}
+
+.map_on_block > button {
+    cursor: pointer;
+}
+
+.map_text {
+    font-family: Proxima Nova;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 22px;
+
+    /* Black */
+
+    color: #252525;
+    margin-bottom: 12px;
+}
+
+.map_on_block button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Proxima Nova;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 17px;
+    /* identical to box height */
+    
+    text-transform: uppercase;
+    
+    /* white */
+    
+    color: #FFFFFF;
+    
+    /* Red */
+
+    background: #D92A22;
+    border-radius: 5px;    
+    padding: 10px 29px;
+    border: 0;
+    width: 100%;
+}
+
+.icon_white_phone {
+    background-image: url(img/phone_white.svg);
+    width: 10px;
+    height: 15px;
+    margin-right: 13px;
+}
+
+.icon_col:hover {
+    background-image: url(img/column_red.svg);
+}
+
+.column_list .column_card.active_card .card_btn {
+    border: 1px solid #D92A22;
+    background: #D92A22;
+    color: #FFFFFF;
+}
+
+.column_list .column_card.active_card:hover .card_btn {
+    border: 1px solid #CCCCCC;
+    background: #FFFFFF;
+    color: #D92A22;
+}
+
+.container {
+    overflow: visible;
+}
+.sort_cards .card.active_card {
+    filter: drop-shadow(0px 8px 25px rgba(115, 115, 115, 0.7));
+}
+
+.sort_cards .card.active_card .card_info .card_title {
+    color: #D92A22;
+}
+
+.sort_cards .card.active_card .card_btn {
+    background: #D92A22;
+    color: #FFFFFF;
+}
+
+.sort_cards .card.active_card {
+    background-color: #F1F1F1;
+}
+
+.yandex_map {
+    width: 954px;
+    height: 1020px;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.cards.map_list_cards.slick-initialized.slick-slider.slick-vertical {
+    width: 25% !important;
+}
+
+.cards.map_list_cards:not(:first-child)  {
+    visibility: hidden;
+    position: absolute;
+}

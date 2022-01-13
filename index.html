@@ -1,0 +1,3162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Дан-инвест</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="mobile.css">
+    <link rel="stylesheet" href="slick/slick.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=3395a1c5-f8c4-4207-b1d6-0e17d7e3fcd1" type="text/javascript"></script>
+    <style>
+        #map {
+            width: 954px;
+            height: 1020px;
+            max-width: 100%;
+            max-height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="filter">
+        <div class="container">
+            <div class="select_element">
+                <div class="icon icon_select"></div>
+                <select class="filter__select" name="" id="">
+                    <option value="">Продажа</option>
+                    <option value="">test</option>
+                </select>
+            </div>
+            <div class="select_element">
+                <div class="icon icon_select"></div>
+                <select class="filter__select" name="" id="">
+                    <option value="">Челябинская область</option>
+                    <option value="">test</option>
+                </select>
+            </div>
+            <div class="select_element">
+                <div class="icon icon_select"></div>
+                <select class="filter__select" name="" id="">
+                    <option value="">Район</option>
+                    <option value="">test</option>
+                </select>
+            </div>
+            <div class="select_element">
+                <div class="icon icon_select"></div>
+                <select class="filter__select" name="" id="">
+                    <option value="">Квартира</option>
+                    <option value="">test</option>
+                </select>
+            </div>
+            <div class="select_element">
+                <div class="icon icon_select"></div>
+                <select class="filter__select" name="" id="">
+                    <option value="">Количество комнат</option>
+                    <option value="">test</option>
+                </select>
+            </div>
+            <div class="input_filter">
+                <input type="text" placeholder="Цена от">
+                <span class="line"></span>
+                <input type="text" placeholder="до">
+            </div>
+            <button class="view_filter">Показать 2 658 предложений</button>
+        </div>
+    </div>
+    <div class="bread_crumbs">
+        <div class="container">
+            <a href="#" class="bread_crumb">Главная</a>
+            <div class="slash">/</div>
+            <a href="#" class="bread_crumb">Челябинская область</a>
+            <div class="slash">/</div>
+            <a href="#" class="bread_crumb">Новостройки</a>
+            <div class="slash">/</div>
+            <a href="#" class="bread_crumb">2 658 предложений</a>
+        </div>
+    </div>
+    <div class="categories">
+        <div class="container">
+            <h2 class="title">Новостройки в Челябинской области</h2>
+            <div class="categories__items">
+                <div class="item active">1-комнатные</div>
+                <div class="item">1-комнатные</div>
+                <div class="item">3-комнатные</div>
+                <div class="item">1-комнатные</div>
+                <div class="item">без посредника</div>
+                <div class="item">до 5 млн.руб</div>
+                <div class="item">лучшее предложение</div>
+                <div class="item active">1-комнатные</div>
+                <div class="item active">2-комнатные</div>
+                <div class="item">3-комнатные</div>
+                <div class="item active">сданный дом</div>
+                <div class="item">без посредника</div>
+                <div class="item">до 5 млн.руб</div>
+                <div class="item">эконом</div>
+                <div class="item">бизнес</div>
+                <div class="all_view">показать все</div>
+            </div>
+        </div>
+    </div>
+    <div class="sort">
+        <div class="container container_mobile">
+            <div class="column_select">
+                <div class="on_map mobile_filter">
+                    <div id="openFilter" class="icon icon_map"></div>
+                    <p>Фильтр</p>
+                </div>
+                <div class="on_map">
+                    <div class="icon icon_map"></div>
+                    <p>На карте</p>
+                </div>
+                <div class="icon icon_col"></div>
+                <div class="icon icon_grid"></div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="select_element">
+                <div class="icon icon_select"></div>
+                <select class="sort_select">
+                    <option value="">Сортировка по умолчанию</option>
+                    <option value="">test</option>
+                </select>
+            </div>
+            <div class="column_select">
+                <div class="on_map">
+                    <div class="icon icon_map"></div>
+                    <p>На карте</p>
+                </div>
+                <div class="icon icon_col"></div>
+                <div class="icon icon_grid"></div>
+            </div>
+        </div>
+    </div>
+    <div class="column_list">
+        <div class="container">
+            <div class="column_cards">
+                <div class="column_card active_card">
+                    <div class="card_img">
+                        <div class="image_texts">
+                            <p class="image_text">
+                                Лучшее предложение
+                            </p>
+                            <p class="image_text">
+                                Скоро в продаже
+                            </p>
+                            <p class="image_text">
+                                Дом сдан
+                            </p>
+                        </div>
+                        <div class="image_rating">
+                            <div class="icon icon_rating">
+
+                            </div>
+                            4.6
+                            <div class="rating_col_reviews">
+                                24 отзыва
+                            </div>
+                        </div>
+                        <img src="img/cardPhoto.png" alt="">
+                    </div>
+                    <div class="column_card_info">
+                        <div class="title_bar">
+                            <div class="left">
+                                <p class="column_card_title">
+                                    ЖК EvoPark
+                                </p>
+                                <div class="on_map">
+                                    <div class="icon icon_map"></div>
+                                    <p>г. Челябинск р-н Советский</p>
+                                </div>
+                            </div>
+                            <p class="page_num">
+                                56 объявлений
+                            </p>
+                        </div>
+                        <div class="column_card_text_info">
+                            <div class="left">
+                                <p class="column_card_desc">
+                                    Жилой комплекс EvoPark состоит из пяти домов. 
+                                    Это панельные и монолитно-кирпичные дома. 
+                                    В жилом комплексе представлены квартиры 
+                                    площадью от 26,7 до 90 кв.м. - это студии, 
+                                    однокомнатные, двухкомнтаные и трехкомнатные...
+                                </p>
+                                <div class="column_card_line">
+                                    <div class="status">
+                                        Статус
+                                        <p>Жилой комплекс сдан</p>
+                                    </div>
+                                    <div class="num_house">
+                                        Кол-во домов
+                                        <p>25</p>
+                                    </div>
+                                </div>
+                                <div class="varioses">
+                                    <div class="varios">
+                                        <p class="varios_title">
+                                            Студии от 26,3 м2
+                                        </p>
+                                        <p class="varios_price">
+                                            2,96 - 3,56 млн ₽ 
+                                        </p>
+                                    </div>
+                                    <div class="varios">
+                                        <p class="varios_title">
+                                            Студии от 26,3 м2
+                                        </p>
+                                        <p class="varios_price">
+                                            2,96 - 3,56 млн ₽ 
+                                        </p>
+                                    </div>
+                                    <div class="varios">
+                                        <p class="varios_title">
+                                            Студии от 26,3 м2
+                                        </p>
+                                        <p class="varios_price">
+                                            2,96 - 3,56 млн ₽ 
+                                        </p>
+                                    </div>
+                                    <div class="varios">
+                                        <p class="varios_title">
+                                            Студии от 26,3 м2
+                                        </p>
+                                        <p class="varios_price">
+                                            2,96 - 3,56 млн ₽ 
+                                        </p>
+                                    </div>
+                                    <div class="varios">
+                                        <p class="varios_title">
+                                            Студии от 26,3 м2
+                                        </p>
+                                        <p class="varios_price">
+                                            2,96 - 3,56 млн ₽ 
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="right">
+                                <a class="card_btn">Позвоните мне</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column_card active_card">
+                    <div class="card_img">
+                        <div class="image_texts">
+                            <p class="image_text">
+                                Лучшее предложение
+                            </p>
+                            <p class="image_text">
+                                Скоро в продаже
+                            </p>
+                            <p class="image_text">
+                                Дом сдан
+                            </p>
+                        </div>
+                        <div class="image_rating">
+                            <div class="icon icon_rating">
+
+                            </div>
+                            4.6
+                            <div class="rating_col_reviews">
+                                24 отзыва
+                            </div>
+                        </div>
+                        <img src="img/cardPhoto.png" alt="">
+                    </div>
+                    <div class="column_card_info">
+                        <div class="title_bar">
+                            <div class="left">
+                                <p class="column_card_title">
+                                    ЖК EvoPark
+                                </p>
+                                <div class="on_map">
+                                    <div class="icon icon_map"></div>
+                                    <p>г. Челябинск р-н Советский</p>
+                                </div>
+                            </div>
+                            <p class="page_num">
+                                56 объявлений
+                            </p>
+                        </div>
+                        <div class="column_card_text_info">
+                            <div class="left">
+                                <p class="column_card_desc">
+                                    Жилой комплекс EvoPark состоит из пяти домов. 
+                                    Это панельные и монолитно-кирпичные дома. 
+                                    В жилом комплексе представлены квартиры 
+                                    площадью от 26,7 до 90 кв.м. - это студии, 
+                                    однокомнатные, двухкомнтаные и трехкомнатные...
+                                </p>
+                                <div class="column_card_line">
+                                    <div class="status">
+                                        Статус
+                                        <p>Жилой комплекс сдан</p>
+                                    </div>
+                                    <div class="num_house">
+                                        Кол-во домов
+                                        <p>25</p>
+                                    </div>
+                                </div>
+                                <div class="varioses">
+                                    <div class="varios">
+                                        <p class="varios_title">
+                                            Студии от 26,3 м2
+                                        </p>
+                                        <p class="varios_price">
+                                            2,96 - 3,56 млн ₽ 
+                                        </p>
+                                    </div>
+                                    <div class="varios">
+                                        <p class="varios_title">
+                                            Студии от 26,3 м2
+                                        </p>
+                                        <p class="varios_price">
+                                            2,96 - 3,56 млн ₽ 
+                                        </p>
+                                    </div>
+                                    <div class="varios">
+                                        <p class="varios_title">
+                                            Студии от 26,3 м2
+                                        </p>
+                                        <p class="varios_price">
+                                            2,96 - 3,56 млн ₽ 
+                                        </p>
+                                    </div>
+                                    <div class="varios">
+                                        <p class="varios_title">
+                                            Студии от 26,3 м2
+                                        </p>
+                                        <p class="varios_price">
+                                            2,96 - 3,56 млн ₽ 
+                                        </p>
+                                    </div>
+                                    <div class="varios">
+                                        <p class="varios_title">
+                                            Студии от 26,3 м2
+                                        </p>
+                                        <p class="varios_price">
+                                            2,96 - 3,56 млн ₽ 
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="right">
+                                <a class="card_btn">Позвоните мне</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column_card">
+                    <div class="card_img">
+                        <div class="image_texts">
+                            <p class="image_text">
+                                Лучшее предложение
+                            </p>
+                            <p class="image_text">
+                                Скоро в продаже
+                            </p>
+                            <p class="image_text">
+                                Дом сдан
+                            </p>
+                        </div>
+                        <div class="image_rating">
+                            <div class="icon icon_rating">
+
+                            </div>
+                            4.6
+                            <div class="rating_col_reviews">
+                                24 отзыва
+                            </div>
+                        </div>
+                        <img src="img/cardPhoto.png" alt="">
+                    </div>
+                    <div class="column_card_info">
+                        <div class="title_bar">
+                            <div class="left">
+                                <p class="column_card_title">
+                                    ЖК EvoPark
+                                </p>
+                                <div class="on_map">
+                                    <div class="icon icon_map"></div>
+                                    <p>г. Челябинск р-н Советский</p>
+                                </div>
+                            </div>
+                            <p class="page_num">
+                                56 объявлений
+                            </p>
+                        </div>
+                        <div class="column_card_text_info">
+                            <div class="left">
+                                <p class="column_card_desc">
+                                    Жилой комплекс EvoPark состоит из пяти домов. 
+                                    Это панельные и монолитно-кирпичные дома. 
+                                    В жилом комплексе представлены квартиры 
+                                    площадью от 26,7 до 90 кв.м. - это студии, 
+                                    однокомнатные, двухкомнтаные и трехкомнатные...
+                                </p>
+                                <div class="column_card_line">
+                                    <div class="status">
+                                        Статус
+                                        <p>Жилой комплекс сдан</p>
+                                    </div>
+                                    <div class="num_house">
+                                        Кол-во домов
+                                        <p>25</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="right">
+                                <div class="card_price">
+                                    <p class="card_price_title">
+                                        Стоимость
+                                    </p>
+                                    <div class="price_num">
+                                        <p class="from_price">2 963 905 ₽ </p>
+                                        <div class="line"></div>
+                                        <p class="to_price">4 866 903 ₽ </p>
+                                    </div>
+                                    <div class="square_num">
+                                        <p class="from_square">45 000 ₽ </p>
+                                        <div class="line"></div>
+                                        <p class="to_square">65 000 ₽ за м2 </p>
+                                    </div>
+                                </div>
+                                <a class="card_btn">Позвоните мне</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column_card">
+                    <div class="card_img">
+                        <div class="image_texts">
+                            <p class="image_text">
+                                Лучшее предложение
+                            </p>
+                            <p class="image_text">
+                                Скоро в продаже
+                            </p>
+                            <p class="image_text">
+                                Дом сдан
+                            </p>
+                        </div>
+                        <div class="image_rating">
+                            <div class="icon icon_rating">
+
+                            </div>
+                            4.6
+                            <div class="rating_col_reviews">
+                                24 отзыва
+                            </div>
+                        </div>
+                        <img src="img/cardPhoto.png" alt="">
+                    </div>
+                    <div class="column_card_info">
+                        <div class="title_bar">
+                            <div class="left">
+                                <p class="column_card_title">
+                                    ЖК EvoPark
+                                </p>
+                                <div class="on_map">
+                                    <div class="icon icon_map"></div>
+                                    <p>г. Челябинск р-н Советский</p>
+                                </div>
+                            </div>
+                            <p class="page_num">
+                                56 объявлений
+                            </p>
+                        </div>
+                        <div class="column_card_text_info">
+                            <div class="left">
+                                <p class="column_card_desc">
+                                    Жилой комплекс EvoPark состоит из пяти домов. 
+                                    Это панельные и монолитно-кирпичные дома. 
+                                    В жилом комплексе представлены квартиры 
+                                    площадью от 26,7 до 90 кв.м. - это студии, 
+                                    однокомнатные, двухкомнтаные и трехкомнатные...
+                                </p>
+                                <div class="column_card_line">
+                                    <div class="status">
+                                        Статус
+                                        <p>Жилой комплекс сдан</p>
+                                    </div>
+                                    <div class="num_house">
+                                        Кол-во домов
+                                        <p>25</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="right">
+                                <div class="card_price">
+                                    <p class="card_price_title">
+                                        Стоимость
+                                    </p>
+                                    <div class="price_num">
+                                        <p class="from_price">2 963 905 ₽ </p>
+                                        <div class="line"></div>
+                                        <p class="to_price">4 866 903 ₽ </p>
+                                    </div>
+                                    <div class="square_num">
+                                        <p class="from_square">45 000 ₽ </p>
+                                        <div class="line"></div>
+                                        <p class="to_square">65 000 ₽ за м2 </p>
+                                    </div>
+                                </div>
+                                <a class="card_btn">Позвоните мне</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column_card">
+                    <div class="card_img">
+                        <div class="image_texts">
+                            <p class="image_text">
+                                Лучшее предложение
+                            </p>
+                            <p class="image_text">
+                                Скоро в продаже
+                            </p>
+                            <p class="image_text">
+                                Дом сдан
+                            </p>
+                        </div>
+                        <div class="image_rating">
+                            <div class="icon icon_rating">
+
+                            </div>
+                            4.6
+                            <div class="rating_col_reviews">
+                                24 отзыва
+                            </div>
+                        </div>
+                        <img src="img/cardPhoto.png" alt="">
+                    </div>
+                    <div class="column_card_info">
+                        <div class="title_bar">
+                            <div class="left">
+                                <p class="column_card_title">
+                                    ЖК EvoPark
+                                </p>
+                                <div class="on_map">
+                                    <div class="icon icon_map"></div>
+                                    <p>г. Челябинск р-н Советский</p>
+                                </div>
+                            </div>
+                            <p class="page_num">
+                                56 объявлений
+                            </p>
+                        </div>
+                        <div class="column_card_text_info">
+                            <div class="left">
+                                <p class="column_card_desc">
+                                    Жилой комплекс EvoPark состоит из пяти домов. 
+                                    Это панельные и монолитно-кирпичные дома. 
+                                    В жилом комплексе представлены квартиры 
+                                    площадью от 26,7 до 90 кв.м. - это студии, 
+                                    однокомнатные, двухкомнтаные и трехкомнатные...
+                                </p>
+                                <div class="column_card_line">
+                                    <div class="status">
+                                        Статус
+                                        <p>Жилой комплекс сдан</p>
+                                    </div>
+                                    <div class="num_house">
+                                        Кол-во домов
+                                        <p>25</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="right">
+                                <div class="card_price">
+                                    <p class="card_price_title">
+                                        Стоимость
+                                    </p>
+                                    <div class="price_num">
+                                        <p class="from_price">2 963 905 ₽ </p>
+                                        <div class="line"></div>
+                                        <p class="to_price">4 866 903 ₽ </p>
+                                    </div>
+                                    <div class="square_num">
+                                        <p class="from_square">45 000 ₽ </p>
+                                        <div class="line"></div>
+                                        <p class="to_square">65 000 ₽ за м2 </p>
+                                    </div>
+                                </div>
+                                <a class="card_btn">Позвоните мне</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column_card">
+                    <div class="card_img">
+                        <div class="image_texts">
+                            <p class="image_text">
+                                Лучшее предложение
+                            </p>
+                            <p class="image_text">
+                                Скоро в продаже
+                            </p>
+                            <p class="image_text">
+                                Дом сдан
+                            </p>
+                        </div>
+                        <div class="image_rating">
+                            <div class="icon icon_rating">
+
+                            </div>
+                            4.6
+                            <div class="rating_col_reviews">
+                                24 отзыва
+                            </div>
+                        </div>
+                        <img src="img/cardPhoto.png" alt="">
+                    </div>
+                    <div class="column_card_info">
+                        <div class="title_bar">
+                            <div class="left">
+                                <p class="column_card_title">
+                                    ЖК EvoPark
+                                </p>
+                                <div class="on_map">
+                                    <div class="icon icon_map"></div>
+                                    <p>г. Челябинск р-н Советский</p>
+                                </div>
+                            </div>
+                            <p class="page_num">
+                                56 объявлений
+                            </p>
+                        </div>
+                        <div class="column_card_text_info">
+                            <div class="left">
+                                <p class="column_card_desc">
+                                    Жилой комплекс EvoPark состоит из пяти домов. 
+                                    Это панельные и монолитно-кирпичные дома. 
+                                    В жилом комплексе представлены квартиры 
+                                    площадью от 26,7 до 90 кв.м. - это студии, 
+                                    однокомнатные, двухкомнтаные и трехкомнатные...
+                                </p>
+                                <div class="column_card_line">
+                                    <div class="status">
+                                        Статус
+                                        <p>Жилой комплекс сдан</p>
+                                    </div>
+                                    <div class="num_house">
+                                        Кол-во домов
+                                        <p>25</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="right">
+                                <div class="card_price">
+                                    <p class="card_price_title">
+                                        Стоимость
+                                    </p>
+                                    <div class="price_num">
+                                        <p class="from_price">2 963 905 ₽ </p>
+                                        <div class="line"></div>
+                                        <p class="to_price">4 866 903 ₽ </p>
+                                    </div>
+                                    <div class="square_num">
+                                        <p class="from_square">45 000 ₽ </p>
+                                        <div class="line"></div>
+                                        <p class="to_square">65 000 ₽ за м2 </p>
+                                    </div>
+                                </div>
+                                <a class="card_btn">Позвоните мне</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column_card">
+                    <div class="card_img">
+                        <div class="image_texts">
+                            <p class="image_text">
+                                Лучшее предложение
+                            </p>
+                            <p class="image_text">
+                                Скоро в продаже
+                            </p>
+                            <p class="image_text">
+                                Дом сдан
+                            </p>
+                        </div>
+                        <div class="image_rating">
+                            <div class="icon icon_rating">
+
+                            </div>
+                            4.6
+                            <div class="rating_col_reviews">
+                                24 отзыва
+                            </div>
+                        </div>
+                        <img src="img/cardPhoto.png" alt="">
+                    </div>
+                    <div class="column_card_info">
+                        <div class="title_bar">
+                            <div class="left">
+                                <p class="column_card_title">
+                                    ЖК EvoPark
+                                </p>
+                                <div class="on_map">
+                                    <div class="icon icon_map"></div>
+                                    <p>г. Челябинск р-н Советский</p>
+                                </div>
+                            </div>
+                            <p class="page_num">
+                                56 объявлений
+                            </p>
+                        </div>
+                        <div class="column_card_text_info">
+                            <div class="left">
+                                <p class="column_card_desc">
+                                    Жилой комплекс EvoPark состоит из пяти домов. 
+                                    Это панельные и монолитно-кирпичные дома. 
+                                    В жилом комплексе представлены квартиры 
+                                    площадью от 26,7 до 90 кв.м. - это студии, 
+                                    однокомнатные, двухкомнтаные и трехкомнатные...
+                                </p>
+                                <div class="column_card_line">
+                                    <div class="status">
+                                        Статус
+                                        <p>Жилой комплекс сдан</p>
+                                    </div>
+                                    <div class="num_house">
+                                        Кол-во домов
+                                        <p>25</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="right">
+                                <div class="card_price">
+                                    <p class="card_price_title">
+                                        Стоимость
+                                    </p>
+                                    <div class="price_num">
+                                        <p class="from_price">2 963 905 ₽ </p>
+                                        <div class="line"></div>
+                                        <p class="to_price">4 866 903 ₽ </p>
+                                    </div>
+                                    <div class="square_num">
+                                        <p class="from_square">45 000 ₽ </p>
+                                        <div class="line"></div>
+                                        <p class="to_square">65 000 ₽ за м2 </p>
+                                    </div>
+                                </div>
+                                <a class="card_btn">Позвоните мне</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="pagination">
+            <div class="pag_left"></div>
+            <div class="pag_num active">1</div>
+            <div class="pag_num">2</div>
+            <div class="pag_ellipsis">...</div>
+            <div class="pag_num">9</div>
+            <div class="pag_num">10</div>
+            <div class="pag_right"></div>
+        </div>
+    </div>
+    <div class="grid_card">
+        <div class="sort_cards">
+            <div class="container">
+                <div class="card active_card">
+                    <div class="card_img">
+                        <div class="image_texts">
+                            <p class="image_text">
+                                Лучшее предложение
+                            </p>
+                            <p class="image_text">
+                                Скоро в продаже
+                            </p>
+                            <p class="image_text">
+                                Дом сдан
+                            </p>
+                        </div>
+                        <div class="image_rating">
+                            <div class="icon icon_rating">
+
+                            </div>
+                            4.6
+                            <div class="rating_col_reviews">
+                                24 отзыва
+                            </div>
+                        </div>
+                        <img src="img/cardPhoto.png" alt="">
+                    </div>
+                    <div class="card_info">
+                        <p class="card_title">
+                            ЖК Gagarin Residense
+                        </p>
+                        <div class="card_map">
+                            <div class="icon icon_map"></div> 
+                            <p>г. Челябинск р-н Советский</p>
+                        </div>
+                        <div class="card_price">
+                            <p class="card_price_title">
+                                Стоимость
+                            </p>
+                            <div class="price_num">
+                                <p class="from_price">2 963 905 ₽ </p>
+                                <div class="line"></div>
+                                <p class="to_price">4 866 903 ₽ </p>
+                            </div>
+                            <div class="square_num">
+                                <p class="from_square">45 000 ₽ </p>
+                                <div class="line"></div>
+                                <p class="to_square">65 000 ₽ за м2 </p>
+                            </div>
+                            <div class="card_status">
+                                <div class="card_status_title">
+                                    Статус
+                                </div>
+                                <div class="term_status">
+                                    <p>Срок сдачи: II кв. 2021</p>
+                                    <p class="number">
+                                        56 объявлений
+                                    </p>
+                                </div>
+                            </div>
+                            <a class="card_btn">Позвоните мне</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card active_card">
+                    <div class="card_img">
+                        <div class="image_texts">
+                            <p class="image_text">
+                                Лучшее предложение
+                            </p>
+                            <p class="image_text">
+                                Скоро в продаже
+                            </p>
+                            <p class="image_text">
+                                Дом сдан
+                            </p>
+                        </div>
+                        <div class="image_rating">
+                            <div class="icon icon_rating">
+
+                            </div>
+                            4.6
+                            <div class="rating_col_reviews">
+                                24 отзыва
+                            </div>
+                        </div>
+                        <img src="img/cardPhoto.png" alt="">
+                    </div>
+                    <div class="card_info">
+                        <p class="card_title">
+                            ЖК Gagarin Residense
+                        </p>
+                        <div class="card_map">
+                            <div class="icon icon_map"></div> 
+                            <p>г. Челябинск р-н Советский</p>
+                        </div>
+                        <div class="card_price">
+                            <p class="card_price_title">
+                                Стоимость
+                            </p>
+                            <div class="price_num">
+                                <p class="from_price">2 963 905 ₽ </p>
+                                <div class="line"></div>
+                                <p class="to_price">4 866 903 ₽ </p>
+                            </div>
+                            <div class="square_num">
+                                <p class="from_square">45 000 ₽ </p>
+                                <div class="line"></div>
+                                <p class="to_square">65 000 ₽ за м2 </p>
+                            </div>
+                            <div class="card_status">
+                                <div class="card_status_title">
+                                    Статус
+                                </div>
+                                <div class="term_status">
+                                    <p>Срок сдачи: II кв. 2021</p>
+                                    <p class="number">
+                                        56 объявлений
+                                    </p>
+                                </div>
+                            </div>
+                            <a class="card_btn">Позвоните мне</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card_img">
+                        <div class="image_texts">
+                            <p class="image_text">
+                                Лучшее предложение
+                            </p>
+                            <p class="image_text">
+                                Скоро в продаже
+                            </p>
+                            <p class="image_text">
+                                Дом сдан
+                            </p>
+                        </div>
+                        <div class="image_rating">
+                            <div class="icon icon_rating">
+
+                            </div>
+                            4.6
+                            <div class="rating_col_reviews">
+                                24 отзыва
+                            </div>
+                        </div>
+                        <img src="img/cardPhoto.png" alt="">
+                    </div>
+                    <div class="card_info">
+                        <p class="card_title">
+                            ЖК Gagarin Residense
+                        </p>
+                        <div class="card_map">
+                            <div class="icon icon_map"></div> 
+                            <p>г. Челябинск р-н Советский</p>
+                        </div>
+                        <div class="card_price">
+                            <p class="card_price_title">
+                                Стоимость
+                            </p>
+                            <div class="price_num">
+                                <p class="from_price">2 963 905 ₽ </p>
+                                <div class="line"></div>
+                                <p class="to_price">4 866 903 ₽ </p>
+                            </div>
+                            <div class="square_num">
+                                <p class="from_square">45 000 ₽ </p>
+                                <div class="line"></div>
+                                <p class="to_square">65 000 ₽ за м2 </p>
+                            </div>
+                            <div class="card_status">
+                                <div class="card_status_title">
+                                    Статус
+                                </div>
+                                <div class="term_status">
+                                    <p>Жилой комплекс сдан</p>
+                                    <p class="number">
+                                        Пока нет в продаже
+                                    </p>
+                                </div>
+                            </div>
+                            <a class="card_btn">Узнать подробности</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card_img">
+                        <div class="image_texts">
+                            <p class="image_text">
+                                Лучшее предложение
+                            </p>
+                            <p class="image_text">
+                                Скоро в продаже
+                            </p>
+                            <p class="image_text">
+                                Дом сдан
+                            </p>
+                        </div>
+                        <div class="image_rating">
+                            <div class="icon icon_rating">
+
+                            </div>
+                            4.6
+                            <div class="rating_col_reviews">
+                                24 отзыва
+                            </div>
+                        </div>
+                        <img src="img/cardPhoto.png" alt="">
+                    </div>
+                    <div class="card_info">
+                        <p class="card_title">
+                            ЖК Gagarin Residense
+                        </p>
+                        <div class="card_map">
+                            <div class="icon icon_map"></div> 
+                            <p>г. Челябинск р-н Советский</p>
+                        </div>
+                        <div class="card_price">
+                            <p class="card_price_title">
+                                Стоимость
+                            </p>
+                            <div class="price_num">
+                                <p class="from_price">2 963 905 ₽ </p>
+                                <div class="line"></div>
+                                <p class="to_price">4 866 903 ₽ </p>
+                            </div>
+                            <div class="square_num">
+                                <p class="from_square">45 000 ₽ </p>
+                                <div class="line"></div>
+                                <p class="to_square">65 000 ₽ за м2 </p>
+                            </div>
+                            <div class="card_status">
+                                <div class="card_status_title">
+                                    Статус
+                                </div>
+                                <div class="term_status">
+                                    <p>Срок сдачи: II кв. 2021</p>
+                                    <p class="number">
+                                        56 объявлений
+                                    </p>
+                                </div>
+                            </div>
+                            <a class="card_btn">Позвоните мне</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card_img">
+                        <div class="image_texts">
+                            <p class="image_text">
+                                Лучшее предложение
+                            </p>
+                            <p class="image_text">
+                                Скоро в продаже
+                            </p>
+                            <p class="image_text">
+                                Дом сдан
+                            </p>
+                        </div>
+                        <div class="image_rating">
+                            <div class="icon icon_rating">
+
+                            </div>
+                            4.6
+                            <div class="rating_col_reviews">
+                                24 отзыва
+                            </div>
+                        </div>
+                        <img src="img/cardPhoto.png" alt="">
+                    </div>
+                    <div class="card_info">
+                        <p class="card_title">
+                            ЖК Gagarin Residense
+                        </p>
+                        <div class="card_map">
+                            <div class="icon icon_map"></div> 
+                            <p>г. Челябинск р-н Советский</p>
+                        </div>
+                        <div class="card_price">
+                            <p class="card_price_title">
+                                Стоимость
+                            </p>
+                            <div class="price_num">
+                                <p class="from_price">2 963 905 ₽ </p>
+                                <div class="line"></div>
+                                <p class="to_price">4 866 903 ₽ </p>
+                            </div>
+                            <div class="square_num">
+                                <p class="from_square">45 000 ₽ </p>
+                                <div class="line"></div>
+                                <p class="to_square">65 000 ₽ за м2 </p>
+                            </div>
+                            <div class="card_status">
+                                <div class="card_status_title">
+                                    Статус
+                                </div>
+                                <div class="term_status">
+                                    <p>Срок сдачи: II кв. 2021</p>
+                                    <p class="number">
+                                        56 объявлений
+                                    </p>
+                                </div>
+                            </div>
+                            <a class="card_btn">Позвоните мне</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card_img">
+                        <div class="image_texts">
+                            <p class="image_text">
+                                Лучшее предложение
+                            </p>
+                            <p class="image_text">
+                                Скоро в продаже
+                            </p>
+                            <p class="image_text">
+                                Дом сдан
+                            </p>
+                        </div>
+                        <div class="image_rating">
+                            <div class="icon icon_rating">
+
+                            </div>
+                            4.6
+                            <div class="rating_col_reviews">
+                                24 отзыва
+                            </div>
+                        </div>
+                        <img src="img/cardPhoto.png" alt="">
+                    </div>
+                    <div class="card_info">
+                        <p class="card_title">
+                            ЖК Gagarin Residense
+                        </p>
+                        <div class="card_map">
+                            <div class="icon icon_map"></div> 
+                            <p>г. Челябинск р-н Советский</p>
+                        </div>
+                        <div class="card_price">
+                            <p class="card_price_title">
+                                Стоимость
+                            </p>
+                            <div class="price_num">
+                                <p class="from_price">2 963 905 ₽ </p>
+                                <div class="line"></div>
+                                <p class="to_price">4 866 903 ₽ </p>
+                            </div>
+                            <div class="square_num">
+                                <p class="from_square">45 000 ₽ </p>
+                                <div class="line"></div>
+                                <p class="to_square">65 000 ₽ за м2 </p>
+                            </div>
+                            <div class="card_status">
+                                <div class="card_status_title">
+                                    Статус
+                                </div>
+                                <div class="term_status">
+                                    <p>Срок сдачи: II кв. 2021</p>
+                                    <p class="number">
+                                        56 объявлений
+                                    </p>
+                                </div>
+                            </div>
+                            <a class="card_btn">Позвоните мне</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card_img">
+                        <div class="image_texts">
+                            <p class="image_text">
+                                Лучшее предложение
+                            </p>
+                            <p class="image_text">
+                                Скоро в продаже
+                            </p>
+                            <p class="image_text">
+                                Дом сдан
+                            </p>
+                        </div>
+                        <div class="image_rating">
+                            <div class="icon icon_rating">
+
+                            </div>
+                            4.6
+                            <div class="rating_col_reviews">
+                                24 отзыва
+                            </div>
+                        </div>
+                        <img src="img/cardPhoto.png" alt="">
+                    </div>
+                    <div class="card_info">
+                        <p class="card_title">
+                            ЖК Gagarin Residense
+                        </p>
+                        <div class="card_map">
+                            <div class="icon icon_map"></div> 
+                            <p>г. Челябинск р-н Советский</p>
+                        </div>
+                        <div class="card_price">
+                            <p class="card_price_title">
+                                Стоимость
+                            </p>
+                            <div class="price_num">
+                                <p class="from_price">2 963 905 ₽ </p>
+                                <div class="line"></div>
+                                <p class="to_price">4 866 903 ₽ </p>
+                            </div>
+                            <div class="square_num">
+                                <p class="from_square">45 000 ₽ </p>
+                                <div class="line"></div>
+                                <p class="to_square">65 000 ₽ за м2 </p>
+                            </div>
+                            <div class="card_status">
+                                <div class="card_status_title">
+                                    Статус
+                                </div>
+                                <div class="term_status">
+                                    <p>Срок сдачи: II кв. 2021</p>
+                                    <p class="number">
+                                        56 объявлений
+                                    </p>
+                                </div>
+                            </div>
+                            <a class="card_btn">Позвоните мне</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card_img">
+                        <div class="image_texts">
+                            <p class="image_text">
+                                Лучшее предложение
+                            </p>
+                            <p class="image_text">
+                                Скоро в продаже
+                            </p>
+                            <p class="image_text">
+                                Дом сдан
+                            </p>
+                        </div>
+                        <div class="image_rating">
+                            <div class="icon icon_rating">
+
+                            </div>
+                            4.6
+                            <div class="rating_col_reviews">
+                                24 отзыва
+                            </div>
+                        </div>
+                        <img src="img/cardPhoto.png" alt="">
+                    </div>
+                    <div class="card_info">
+                        <p class="card_title">
+                            ЖК Gagarin Residense
+                        </p>
+                        <div class="card_map">
+                            <div class="icon icon_map"></div> 
+                            <p>г. Челябинск р-н Советский</p>
+                        </div>
+                        <div class="card_price">
+                            <p class="card_price_title">
+                                Стоимость
+                            </p>
+                            <div class="price_num">
+                                <p class="from_price">2 963 905 ₽ </p>
+                                <div class="line"></div>
+                                <p class="to_price">4 866 903 ₽ </p>
+                            </div>
+                            <div class="square_num">
+                                <p class="from_square">45 000 ₽ </p>
+                                <div class="line"></div>
+                                <p class="to_square">65 000 ₽ за м2 </p>
+                            </div>
+                            <div class="card_status">
+                                <div class="card_status_title">
+                                    Статус
+                                </div>
+                                <div class="term_status">
+                                    <p>Срок сдачи: II кв. 2021</p>
+                                    <p class="number">
+                                        56 объявлений
+                                    </p>
+                                </div>
+                            </div>
+                            <a class="card_btn">Позвоните мне</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pagination pagination_mobile">
+                <div class="pag_left"></div>
+                <div class="pag_num active">1</div>
+                <div class="pag_num">2</div>
+                <div class="pag_ellipsis">...</div>
+                <div class="pag_num">9</div>
+                <div class="pag_num">10</div>
+                <div class="pag_right"></div>
+            </div>
+        </div>
+    </div>
+    <div class="map_list">
+        <div class="sort_cards">
+            <div class="container">
+                <div class="cards map_list_cards">
+                    <div class="card">
+                        <div class="card_img">
+                            <div class="image_texts">
+                                <p class="image_text">
+                                    Лучшее предложение
+                                </p>
+                                <p class="image_text">
+                                    Скоро в продаже
+                                </p>
+                                <p class="image_text">
+                                    Дом сдан
+                                </p>
+                            </div>
+                            <div class="image_rating">
+                                <div class="icon icon_rating">
+    
+                                </div>
+                                4.6
+                                <div class="rating_col_reviews">
+                                    24 отзыва
+                                </div>
+                            </div>
+                            <img src="img/cardPhoto.png" alt="">
+                        </div>
+                        <div class="card_info">
+                            <p class="card_title">
+                                ЖК Gagarin Residense
+                            </p>
+                            <div class="card_map">
+                                <div class="icon icon_map"></div> 
+                                <p>г. Челябинск р-н Советский</p>
+                            </div>
+                            <div class="card_price">
+                                <p class="card_price_title">
+                                    Стоимость
+                                </p>
+                                <div class="price_num">
+                                    <p class="from_price">2 963 905 ₽ </p>
+                                    <div class="line"></div>
+                                    <p class="to_price">4 866 903 ₽ </p>
+                                </div>
+                                <div class="square_num">
+                                    <p class="from_square">45 000 ₽ </p>
+                                    <div class="line"></div>
+                                    <p class="to_square">65 000 ₽ за м2 </p>
+                                </div>
+                                <div class="card_status">
+                                    <div class="card_status_title">
+                                        Статус
+                                    </div>
+                                    <div class="term_status">
+                                        <p>Срок сдачи: II кв. 2021</p>
+                                        <p class="number">
+                                            56 объявлений
+                                        </p>
+                                    </div>
+                                </div>
+                                <a class="card_btn">Позвоните мне</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card_img">
+                            <div class="image_texts">
+                                <p class="image_text">
+                                    Лучшее предложение
+                                </p>
+                                <p class="image_text">
+                                    Скоро в продаже
+                                </p>
+                                <p class="image_text">
+                                    Дом сдан
+                                </p>
+                            </div>
+                            <div class="image_rating">
+                                <div class="icon icon_rating">
+    
+                                </div>
+                                4.6
+                                <div class="rating_col_reviews">
+                                    24 отзыва
+                                </div>
+                            </div>
+                            <img src="img/cardPhoto.png" alt="">
+                        </div>
+                        <div class="card_info">
+                            <p class="card_title">
+                                ЖК Gagarin Residense
+                            </p>
+                            <div class="card_map">
+                                <div class="icon icon_map"></div> 
+                                <p>г. Челябинск р-н Советский</p>
+                            </div>
+                            <div class="card_price">
+                                <p class="card_price_title">
+                                    Стоимость
+                                </p>
+                                <div class="price_num">
+                                    <p class="from_price">2 963 905 ₽ </p>
+                                    <div class="line"></div>
+                                    <p class="to_price">4 866 903 ₽ </p>
+                                </div>
+                                <div class="square_num">
+                                    <p class="from_square">45 000 ₽ </p>
+                                    <div class="line"></div>
+                                    <p class="to_square">65 000 ₽ за м2 </p>
+                                </div>
+                                <div class="card_status">
+                                    <div class="card_status_title">
+                                        Статус
+                                    </div>
+                                    <div class="term_status">
+                                        <p>Срок сдачи: II кв. 2021</p>
+                                        <p class="number">
+                                            56 объявлений
+                                        </p>
+                                    </div>
+                                </div>
+                                <a class="card_btn">Позвоните мне</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card_img">
+                            <div class="image_texts">
+                                <p class="image_text">
+                                    Лучшее предложение
+                                </p>
+                                <p class="image_text">
+                                    Скоро в продаже
+                                </p>
+                                <p class="image_text">
+                                    Дом сдан
+                                </p>
+                            </div>
+                            <div class="image_rating">
+                                <div class="icon icon_rating">
+    
+                                </div>
+                                4.6
+                                <div class="rating_col_reviews">
+                                    24 отзыва
+                                </div>
+                            </div>
+                            <img src="img/cardPhoto.png" alt="">
+                        </div>
+                        <div class="card_info">
+                            <p class="card_title">
+                                ЖК Gagarin Residense
+                            </p>
+                            <div class="card_map">
+                                <div class="icon icon_map"></div> 
+                                <p>г. Челябинск р-н Советский</p>
+                            </div>
+                            <div class="card_price">
+                                <p class="card_price_title">
+                                    Стоимость
+                                </p>
+                                <div class="price_num">
+                                    <p class="from_price">2 963 905 ₽ </p>
+                                    <div class="line"></div>
+                                    <p class="to_price">4 866 903 ₽ </p>
+                                </div>
+                                <div class="square_num">
+                                    <p class="from_square">45 000 ₽ </p>
+                                    <div class="line"></div>
+                                    <p class="to_square">65 000 ₽ за м2 </p>
+                                </div>
+                                <div class="card_status">
+                                    <div class="card_status_title">
+                                        Статус
+                                    </div>
+                                    <div class="term_status">
+                                        <p>Срок сдачи: II кв. 2021</p>
+                                        <p class="number">
+                                            56 объявлений
+                                        </p>
+                                    </div>
+                                </div>
+                                <a class="card_btn">Позвоните мне</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card_img">
+                            <div class="image_texts">
+                                <p class="image_text">
+                                    Лучшее предложение
+                                </p>
+                                <p class="image_text">
+                                    Скоро в продаже
+                                </p>
+                                <p class="image_text">
+                                    Дом сдан
+                                </p>
+                            </div>
+                            <div class="image_rating">
+                                <div class="icon icon_rating">
+    
+                                </div>
+                                4.6
+                                <div class="rating_col_reviews">
+                                    24 отзыва
+                                </div>
+                            </div>
+                            <img src="img/cardPhoto.png" alt="">
+                        </div>
+                        <div class="card_info">
+                            <p class="card_title">
+                                ЖК Gagarin Residense
+                            </p>
+                            <div class="card_map">
+                                <div class="icon icon_map"></div> 
+                                <p>г. Челябинск р-н Советский</p>
+                            </div>
+                            <div class="card_price">
+                                <p class="card_price_title">
+                                    Стоимость
+                                </p>
+                                <div class="price_num">
+                                    <p class="from_price">2 963 905 ₽ </p>
+                                    <div class="line"></div>
+                                    <p class="to_price">4 866 903 ₽ </p>
+                                </div>
+                                <div class="square_num">
+                                    <p class="from_square">45 000 ₽ </p>
+                                    <div class="line"></div>
+                                    <p class="to_square">65 000 ₽ за м2 </p>
+                                </div>
+                                <div class="card_status">
+                                    <div class="card_status_title">
+                                        Статус
+                                    </div>
+                                    <div class="term_status">
+                                        <p>Срок сдачи: II кв. 2021</p>
+                                        <p class="number">
+                                            56 объявлений
+                                        </p>
+                                    </div>
+                                </div>
+                                <a class="card_btn">Позвоните мне</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="cards map_list_cards">
+                    <div class="card">
+                        <div class="card_img">
+                            <div class="image_texts">
+                                <p class="image_text">
+                                    Лучшее предложение
+                                </p>
+                                <p class="image_text">
+                                    Скоро в продаже
+                                </p>
+                                <p class="image_text">
+                                    Дом сдан
+                                </p>
+                            </div>
+                            <div class="image_rating">
+                                <div class="icon icon_rating">
+    
+                                </div>
+                                4.6
+                                <div class="rating_col_reviews">
+                                    24 отзыва
+                                </div>
+                            </div>
+                            <img src="img/cardPhoto2.png" alt="">
+                        </div>
+                        <div class="card_info">
+                            <p class="card_title">
+                                ЖК Gagarin Residense
+                            </p>
+                            <div class="card_map">
+                                <div class="icon icon_map"></div> 
+                                <p>г. Челябинск р-н Советский</p>
+                            </div>
+                            <div class="card_price">
+                                <p class="card_price_title">
+                                    Стоимость
+                                </p>
+                                <div class="price_num">
+                                    <p class="from_price">2 963 905 ₽ </p>
+                                    <div class="line"></div>
+                                    <p class="to_price">4 866 903 ₽ </p>
+                                </div>
+                                <div class="square_num">
+                                    <p class="from_square">45 000 ₽ </p>
+                                    <div class="line"></div>
+                                    <p class="to_square">65 000 ₽ за м2 </p>
+                                </div>
+                                <div class="card_status">
+                                    <div class="card_status_title">
+                                        Статус
+                                    </div>
+                                    <div class="term_status">
+                                        <p>Срок сдачи: II кв. 2021</p>
+                                        <p class="number">
+                                            56 объявлений
+                                        </p>
+                                    </div>
+                                </div>
+                                <a class="card_btn">Позвоните мне</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card_img">
+                            <div class="image_texts">
+                                <p class="image_text">
+                                    Лучшее предложение
+                                </p>
+                                <p class="image_text">
+                                    Скоро в продаже
+                                </p>
+                                <p class="image_text">
+                                    Дом сдан
+                                </p>
+                            </div>
+                            <div class="image_rating">
+                                <div class="icon icon_rating">
+    
+                                </div>
+                                4.6
+                                <div class="rating_col_reviews">
+                                    24 отзыва
+                                </div>
+                            </div>
+                            <img src="img/cardPhoto2.png" alt="">
+                        </div>
+                        <div class="card_info">
+                            <p class="card_title">
+                                ЖК Gagarin Residense
+                            </p>
+                            <div class="card_map">
+                                <div class="icon icon_map"></div> 
+                                <p>г. Челябинск р-н Советский</p>
+                            </div>
+                            <div class="card_price">
+                                <p class="card_price_title">
+                                    Стоимость
+                                </p>
+                                <div class="price_num">
+                                    <p class="from_price">2 963 905 ₽ </p>
+                                    <div class="line"></div>
+                                    <p class="to_price">4 866 903 ₽ </p>
+                                </div>
+                                <div class="square_num">
+                                    <p class="from_square">45 000 ₽ </p>
+                                    <div class="line"></div>
+                                    <p class="to_square">65 000 ₽ за м2 </p>
+                                </div>
+                                <div class="card_status">
+                                    <div class="card_status_title">
+                                        Статус
+                                    </div>
+                                    <div class="term_status">
+                                        <p>Срок сдачи: II кв. 2021</p>
+                                        <p class="number">
+                                            56 объявлений
+                                        </p>
+                                    </div>
+                                </div>
+                                <a class="card_btn">Позвоните мне</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card_img">
+                            <div class="image_texts">
+                                <p class="image_text">
+                                    Лучшее предложение
+                                </p>
+                                <p class="image_text">
+                                    Скоро в продаже
+                                </p>
+                                <p class="image_text">
+                                    Дом сдан
+                                </p>
+                            </div>
+                            <div class="image_rating">
+                                <div class="icon icon_rating">
+    
+                                </div>
+                                4.6
+                                <div class="rating_col_reviews">
+                                    24 отзыва
+                                </div>
+                            </div>
+                            <img src="img/cardPhoto2.png" alt="">
+                        </div>
+                        <div class="card_info">
+                            <p class="card_title">
+                                ЖК Gagarin Residense
+                            </p>
+                            <div class="card_map">
+                                <div class="icon icon_map"></div> 
+                                <p>г. Челябинск р-н Советский</p>
+                            </div>
+                            <div class="card_price">
+                                <p class="card_price_title">
+                                    Стоимость
+                                </p>
+                                <div class="price_num">
+                                    <p class="from_price">2 963 905 ₽ </p>
+                                    <div class="line"></div>
+                                    <p class="to_price">4 866 903 ₽ </p>
+                                </div>
+                                <div class="square_num">
+                                    <p class="from_square">45 000 ₽ </p>
+                                    <div class="line"></div>
+                                    <p class="to_square">65 000 ₽ за м2 </p>
+                                </div>
+                                <div class="card_status">
+                                    <div class="card_status_title">
+                                        Статус
+                                    </div>
+                                    <div class="term_status">
+                                        <p>Срок сдачи: II кв. 2021</p>
+                                        <p class="number">
+                                            56 объявлений
+                                        </p>
+                                    </div>
+                                </div>
+                                <a class="card_btn">Позвоните мне</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card_img">
+                            <div class="image_texts">
+                                <p class="image_text">
+                                    Лучшее предложение
+                                </p>
+                                <p class="image_text">
+                                    Скоро в продаже
+                                </p>
+                                <p class="image_text">
+                                    Дом сдан
+                                </p>
+                            </div>
+                            <div class="image_rating">
+                                <div class="icon icon_rating">
+    
+                                </div>
+                                4.6
+                                <div class="rating_col_reviews">
+                                    24 отзыва
+                                </div>
+                            </div>
+                            <img src="img/cardPhoto2.png" alt="">
+                        </div>
+                        <div class="card_info">
+                            <p class="card_title">
+                                ЖК Gagarin Residense
+                            </p>
+                            <div class="card_map">
+                                <div class="icon icon_map"></div> 
+                                <p>г. Челябинск р-н Советский</p>
+                            </div>
+                            <div class="card_price">
+                                <p class="card_price_title">
+                                    Стоимость
+                                </p>
+                                <div class="price_num">
+                                    <p class="from_price">2 963 905 ₽ </p>
+                                    <div class="line"></div>
+                                    <p class="to_price">4 866 903 ₽ </p>
+                                </div>
+                                <div class="square_num">
+                                    <p class="from_square">45 000 ₽ </p>
+                                    <div class="line"></div>
+                                    <p class="to_square">65 000 ₽ за м2 </p>
+                                </div>
+                                <div class="card_status">
+                                    <div class="card_status_title">
+                                        Статус
+                                    </div>
+                                    <div class="term_status">
+                                        <p>Срок сдачи: II кв. 2021</p>
+                                        <p class="number">
+                                            56 объявлений
+                                        </p>
+                                    </div>
+                                </div>
+                                <a class="card_btn">Позвоните мне</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card_img">
+                            <div class="image_texts">
+                                <p class="image_text">
+                                    Лучшее предложение
+                                </p>
+                                <p class="image_text">
+                                    Скоро в продаже
+                                </p>
+                                <p class="image_text">
+                                    Дом сдан
+                                </p>
+                            </div>
+                            <div class="image_rating">
+                                <div class="icon icon_rating">
+    
+                                </div>
+                                4.6
+                                <div class="rating_col_reviews">
+                                    24 отзыва
+                                </div>
+                            </div>
+                            <img src="img/cardPhoto2.png" alt="">
+                        </div>
+                        <div class="card_info">
+                            <p class="card_title">
+                                ЖК Gagarin Residense
+                            </p>
+                            <div class="card_map">
+                                <div class="icon icon_map"></div> 
+                                <p>г. Челябинск р-н Советский</p>
+                            </div>
+                            <div class="card_price">
+                                <p class="card_price_title">
+                                    Стоимость
+                                </p>
+                                <div class="price_num">
+                                    <p class="from_price">2 963 905 ₽ </p>
+                                    <div class="line"></div>
+                                    <p class="to_price">4 866 903 ₽ </p>
+                                </div>
+                                <div class="square_num">
+                                    <p class="from_square">45 000 ₽ </p>
+                                    <div class="line"></div>
+                                    <p class="to_square">65 000 ₽ за м2 </p>
+                                </div>
+                                <div class="card_status">
+                                    <div class="card_status_title">
+                                        Статус
+                                    </div>
+                                    <div class="term_status">
+                                        <p>Срок сдачи: II кв. 2021</p>
+                                        <p class="number">
+                                            56 объявлений
+                                        </p>
+                                    </div>
+                                </div>
+                                <a class="card_btn">Позвоните мне</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card_img">
+                            <div class="image_texts">
+                                <p class="image_text">
+                                    Лучшее предложение
+                                </p>
+                                <p class="image_text">
+                                    Скоро в продаже
+                                </p>
+                                <p class="image_text">
+                                    Дом сдан
+                                </p>
+                            </div>
+                            <div class="image_rating">
+                                <div class="icon icon_rating">
+    
+                                </div>
+                                4.6
+                                <div class="rating_col_reviews">
+                                    24 отзыва
+                                </div>
+                            </div>
+                            <img src="img/cardPhoto2.png" alt="">
+                        </div>
+                        <div class="card_info">
+                            <p class="card_title">
+                                ЖК Gagarin Residense
+                            </p>
+                            <div class="card_map">
+                                <div class="icon icon_map"></div> 
+                                <p>г. Челябинск р-н Советский</p>
+                            </div>
+                            <div class="card_price">
+                                <p class="card_price_title">
+                                    Стоимость
+                                </p>
+                                <div class="price_num">
+                                    <p class="from_price">2 963 905 ₽ </p>
+                                    <div class="line"></div>
+                                    <p class="to_price">4 866 903 ₽ </p>
+                                </div>
+                                <div class="square_num">
+                                    <p class="from_square">45 000 ₽ </p>
+                                    <div class="line"></div>
+                                    <p class="to_square">65 000 ₽ за м2 </p>
+                                </div>
+                                <div class="card_status">
+                                    <div class="card_status_title">
+                                        Статус
+                                    </div>
+                                    <div class="term_status">
+                                        <p>Срок сдачи: II кв. 2021</p>
+                                        <p class="number">
+                                            56 объявлений
+                                        </p>
+                                    </div>
+                                </div>
+                                <a class="card_btn">Позвоните мне</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card_img">
+                            <div class="image_texts">
+                                <p class="image_text">
+                                    Лучшее предложение
+                                </p>
+                                <p class="image_text">
+                                    Скоро в продаже
+                                </p>
+                                <p class="image_text">
+                                    Дом сдан
+                                </p>
+                            </div>
+                            <div class="image_rating">
+                                <div class="icon icon_rating">
+    
+                                </div>
+                                4.6
+                                <div class="rating_col_reviews">
+                                    24 отзыва
+                                </div>
+                            </div>
+                            <img src="img/cardPhoto2.png" alt="">
+                        </div>
+                        <div class="card_info">
+                            <p class="card_title">
+                                ЖК Gagarin Residense
+                            </p>
+                            <div class="card_map">
+                                <div class="icon icon_map"></div> 
+                                <p>г. Челябинск р-н Советский</p>
+                            </div>
+                            <div class="card_price">
+                                <p class="card_price_title">
+                                    Стоимость
+                                </p>
+                                <div class="price_num">
+                                    <p class="from_price">2 963 905 ₽ </p>
+                                    <div class="line"></div>
+                                    <p class="to_price">4 866 903 ₽ </p>
+                                </div>
+                                <div class="square_num">
+                                    <p class="from_square">45 000 ₽ </p>
+                                    <div class="line"></div>
+                                    <p class="to_square">65 000 ₽ за м2 </p>
+                                </div>
+                                <div class="card_status">
+                                    <div class="card_status_title">
+                                        Статус
+                                    </div>
+                                    <div class="term_status">
+                                        <p>Срок сдачи: II кв. 2021</p>
+                                        <p class="number">
+                                            56 объявлений
+                                        </p>
+                                    </div>
+                                </div>
+                                <a class="card_btn">Позвоните мне</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card_img">
+                            <div class="image_texts">
+                                <p class="image_text">
+                                    Лучшее предложение
+                                </p>
+                                <p class="image_text">
+                                    Скоро в продаже
+                                </p>
+                                <p class="image_text">
+                                    Дом сдан
+                                </p>
+                            </div>
+                            <div class="image_rating">
+                                <div class="icon icon_rating">
+    
+                                </div>
+                                4.6
+                                <div class="rating_col_reviews">
+                                    24 отзыва
+                                </div>
+                            </div>
+                            <img src="img/cardPhoto2.png" alt="">
+                        </div>
+                        <div class="card_info">
+                            <p class="card_title">
+                                ЖК Gagarin Residense
+                            </p>
+                            <div class="card_map">
+                                <div class="icon icon_map"></div> 
+                                <p>г. Челябинск р-н Советский</p>
+                            </div>
+                            <div class="card_price">
+                                <p class="card_price_title">
+                                    Стоимость
+                                </p>
+                                <div class="price_num">
+                                    <p class="from_price">2 963 905 ₽ </p>
+                                    <div class="line"></div>
+                                    <p class="to_price">4 866 903 ₽ </p>
+                                </div>
+                                <div class="square_num">
+                                    <p class="from_square">45 000 ₽ </p>
+                                    <div class="line"></div>
+                                    <p class="to_square">65 000 ₽ за м2 </p>
+                                </div>
+                                <div class="card_status">
+                                    <div class="card_status_title">
+                                        Статус
+                                    </div>
+                                    <div class="term_status">
+                                        <p>Срок сдачи: II кв. 2021</p>
+                                        <p class="number">
+                                            56 объявлений
+                                        </p>
+                                    </div>
+                                </div>
+                                <a class="card_btn">Позвоните мне</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="cards map_list_cards">
+                    <div class="card">
+                        <div class="card_img">
+                            <div class="image_texts">
+                                <p class="image_text">
+                                    Лучшее предложение
+                                </p>
+                                <p class="image_text">
+                                    Скоро в продаже
+                                </p>
+                                <p class="image_text">
+                                    Дом сдан
+                                </p>
+                            </div>
+                            <div class="image_rating">
+                                <div class="icon icon_rating">
+    
+                                </div>
+                                4.6
+                                <div class="rating_col_reviews">
+                                    24 отзыва
+                                </div>
+                            </div>
+                            <img src="img/cardPhoto3.png" alt="">
+                        </div>
+                        <div class="card_info">
+                            <p class="card_title">
+                                ЖК Gagarin Residense
+                            </p>
+                            <div class="card_map">
+                                <div class="icon icon_map"></div> 
+                                <p>г. Челябинск р-н Советский</p>
+                            </div>
+                            <div class="card_price">
+                                <p class="card_price_title">
+                                    Стоимость
+                                </p>
+                                <div class="price_num">
+                                    <p class="from_price">2 963 905 ₽ </p>
+                                    <div class="line"></div>
+                                    <p class="to_price">4 866 903 ₽ </p>
+                                </div>
+                                <div class="square_num">
+                                    <p class="from_square">45 000 ₽ </p>
+                                    <div class="line"></div>
+                                    <p class="to_square">65 000 ₽ за м2 </p>
+                                </div>
+                                <div class="card_status">
+                                    <div class="card_status_title">
+                                        Статус
+                                    </div>
+                                    <div class="term_status">
+                                        <p>Срок сдачи: II кв. 2021</p>
+                                        <p class="number">
+                                            56 объявлений
+                                        </p>
+                                    </div>
+                                </div>
+                                <a class="card_btn">Позвоните мне</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card_img">
+                            <div class="image_texts">
+                                <p class="image_text">
+                                    Лучшее предложение
+                                </p>
+                                <p class="image_text">
+                                    Скоро в продаже
+                                </p>
+                                <p class="image_text">
+                                    Дом сдан
+                                </p>
+                            </div>
+                            <div class="image_rating">
+                                <div class="icon icon_rating">
+    
+                                </div>
+                                4.6
+                                <div class="rating_col_reviews">
+                                    24 отзыва
+                                </div>
+                            </div>
+                            <img src="img/cardPhoto3.png" alt="">
+                        </div>
+                        <div class="card_info">
+                            <p class="card_title">
+                                ЖК Gagarin Residense
+                            </p>
+                            <div class="card_map">
+                                <div class="icon icon_map"></div> 
+                                <p>г. Челябинск р-н Советский</p>
+                            </div>
+                            <div class="card_price">
+                                <p class="card_price_title">
+                                    Стоимость
+                                </p>
+                                <div class="price_num">
+                                    <p class="from_price">2 963 905 ₽ </p>
+                                    <div class="line"></div>
+                                    <p class="to_price">4 866 903 ₽ </p>
+                                </div>
+                                <div class="square_num">
+                                    <p class="from_square">45 000 ₽ </p>
+                                    <div class="line"></div>
+                                    <p class="to_square">65 000 ₽ за м2 </p>
+                                </div>
+                                <div class="card_status">
+                                    <div class="card_status_title">
+                                        Статус
+                                    </div>
+                                    <div class="term_status">
+                                        <p>Срок сдачи: II кв. 2021</p>
+                                        <p class="number">
+                                            56 объявлений
+                                        </p>
+                                    </div>
+                                </div>
+                                <a class="card_btn">Позвоните мне</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card_img">
+                            <div class="image_texts">
+                                <p class="image_text">
+                                    Лучшее предложение
+                                </p>
+                                <p class="image_text">
+                                    Скоро в продаже
+                                </p>
+                                <p class="image_text">
+                                    Дом сдан
+                                </p>
+                            </div>
+                            <div class="image_rating">
+                                <div class="icon icon_rating">
+    
+                                </div>
+                                4.6
+                                <div class="rating_col_reviews">
+                                    24 отзыва
+                                </div>
+                            </div>
+                            <img src="img/cardPhoto3.png" alt="">
+                        </div>
+                        <div class="card_info">
+                            <p class="card_title">
+                                ЖК Gagarin Residense
+                            </p>
+                            <div class="card_map">
+                                <div class="icon icon_map"></div> 
+                                <p>г. Челябинск р-н Советский</p>
+                            </div>
+                            <div class="card_price">
+                                <p class="card_price_title">
+                                    Стоимость
+                                </p>
+                                <div class="price_num">
+                                    <p class="from_price">2 963 905 ₽ </p>
+                                    <div class="line"></div>
+                                    <p class="to_price">4 866 903 ₽ </p>
+                                </div>
+                                <div class="square_num">
+                                    <p class="from_square">45 000 ₽ </p>
+                                    <div class="line"></div>
+                                    <p class="to_square">65 000 ₽ за м2 </p>
+                                </div>
+                                <div class="card_status">
+                                    <div class="card_status_title">
+                                        Статус
+                                    </div>
+                                    <div class="term_status">
+                                        <p>Срок сдачи: II кв. 2021</p>
+                                        <p class="number">
+                                            56 объявлений
+                                        </p>
+                                    </div>
+                                </div>
+                                <a class="card_btn">Позвоните мне</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card_img">
+                            <div class="image_texts">
+                                <p class="image_text">
+                                    Лучшее предложение
+                                </p>
+                                <p class="image_text">
+                                    Скоро в продаже
+                                </p>
+                                <p class="image_text">
+                                    Дом сдан
+                                </p>
+                            </div>
+                            <div class="image_rating">
+                                <div class="icon icon_rating">
+    
+                                </div>
+                                4.6
+                                <div class="rating_col_reviews">
+                                    24 отзыва
+                                </div>
+                            </div>
+                            <img src="img/cardPhoto3.png" alt="">
+                        </div>
+                        <div class="card_info">
+                            <p class="card_title">
+                                ЖК Gagarin Residense
+                            </p>
+                            <div class="card_map">
+                                <div class="icon icon_map"></div> 
+                                <p>г. Челябинск р-н Советский</p>
+                            </div>
+                            <div class="card_price">
+                                <p class="card_price_title">
+                                    Стоимость
+                                </p>
+                                <div class="price_num">
+                                    <p class="from_price">2 963 905 ₽ </p>
+                                    <div class="line"></div>
+                                    <p class="to_price">4 866 903 ₽ </p>
+                                </div>
+                                <div class="square_num">
+                                    <p class="from_square">45 000 ₽ </p>
+                                    <div class="line"></div>
+                                    <p class="to_square">65 000 ₽ за м2 </p>
+                                </div>
+                                <div class="card_status">
+                                    <div class="card_status_title">
+                                        Статус
+                                    </div>
+                                    <div class="term_status">
+                                        <p>Срок сдачи: II кв. 2021</p>
+                                        <p class="number">
+                                            56 объявлений
+                                        </p>
+                                    </div>
+                                </div>
+                                <a class="card_btn">Позвоните мне</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card_img">
+                            <div class="image_texts">
+                                <p class="image_text">
+                                    Лучшее предложение
+                                </p>
+                                <p class="image_text">
+                                    Скоро в продаже
+                                </p>
+                                <p class="image_text">
+                                    Дом сдан
+                                </p>
+                            </div>
+                            <div class="image_rating">
+                                <div class="icon icon_rating">
+    
+                                </div>
+                                4.6
+                                <div class="rating_col_reviews">
+                                    24 отзыва
+                                </div>
+                            </div>
+                            <img src="img/cardPhoto3.png" alt="">
+                        </div>
+                        <div class="card_info">
+                            <p class="card_title">
+                                ЖК Gagarin Residense
+                            </p>
+                            <div class="card_map">
+                                <div class="icon icon_map"></div> 
+                                <p>г. Челябинск р-н Советский</p>
+                            </div>
+                            <div class="card_price">
+                                <p class="card_price_title">
+                                    Стоимость
+                                </p>
+                                <div class="price_num">
+                                    <p class="from_price">2 963 905 ₽ </p>
+                                    <div class="line"></div>
+                                    <p class="to_price">4 866 903 ₽ </p>
+                                </div>
+                                <div class="square_num">
+                                    <p class="from_square">45 000 ₽ </p>
+                                    <div class="line"></div>
+                                    <p class="to_square">65 000 ₽ за м2 </p>
+                                </div>
+                                <div class="card_status">
+                                    <div class="card_status_title">
+                                        Статус
+                                    </div>
+                                    <div class="term_status">
+                                        <p>Срок сдачи: II кв. 2021</p>
+                                        <p class="number">
+                                            56 объявлений
+                                        </p>
+                                    </div>
+                                </div>
+                                <a class="card_btn">Позвоните мне</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card_img">
+                            <div class="image_texts">
+                                <p class="image_text">
+                                    Лучшее предложение
+                                </p>
+                                <p class="image_text">
+                                    Скоро в продаже
+                                </p>
+                                <p class="image_text">
+                                    Дом сдан
+                                </p>
+                            </div>
+                            <div class="image_rating">
+                                <div class="icon icon_rating">
+    
+                                </div>
+                                4.6
+                                <div class="rating_col_reviews">
+                                    24 отзыва
+                                </div>
+                            </div>
+                            <img src="img/cardPhoto3.png" alt="">
+                        </div>
+                        <div class="card_info">
+                            <p class="card_title">
+                                ЖК Gagarin Residense
+                            </p>
+                            <div class="card_map">
+                                <div class="icon icon_map"></div> 
+                                <p>г. Челябинск р-н Советский</p>
+                            </div>
+                            <div class="card_price">
+                                <p class="card_price_title">
+                                    Стоимость
+                                </p>
+                                <div class="price_num">
+                                    <p class="from_price">2 963 905 ₽ </p>
+                                    <div class="line"></div>
+                                    <p class="to_price">4 866 903 ₽ </p>
+                                </div>
+                                <div class="square_num">
+                                    <p class="from_square">45 000 ₽ </p>
+                                    <div class="line"></div>
+                                    <p class="to_square">65 000 ₽ за м2 </p>
+                                </div>
+                                <div class="card_status">
+                                    <div class="card_status_title">
+                                        Статус
+                                    </div>
+                                    <div class="term_status">
+                                        <p>Срок сдачи: II кв. 2021</p>
+                                        <p class="number">
+                                            56 объявлений
+                                        </p>
+                                    </div>
+                                </div>
+                                <a class="card_btn">Позвоните мне</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="map_select">
+                    <!-- <img src="img/map_img.png" alt=""> -->
+                    <!-- <iframe class="yandex_map" src="https://yandex.ru/map-widget/v1/?um=constructor%3A6683ecad974ff4d1664e1f06e5cf587134f1afeacd89c2918176fa9bbd76b664&amp;source=constructor"
+                     width="400" 
+                     height="500" 
+                     frameborder="0">
+                    </iframe> -->
+                    <div id="map"></div>
+                    <div class="map_on_block">
+                        <div class="map_text">
+                            Нужна консультация специалиста?
+                        </div>
+                        <button>
+                            <div class="icon icon_white_phone"></div>
+                            Позвоните мне
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="banner_list">
+        <div class="container">
+            <div class="banner_help">
+                <div class="banner_info">
+                    <p class="banner_title">
+                        Помощь в оформлении ипотеки
+                    </p>
+                    <p class="banner_info_text">
+                        Экономьте своё время и силы.
+                        Специалисты Дан-Инвест помогут 
+                        вам с поиском и ответят на все вопросы!
+                    </p>
+                    <div class="form_field">
+                        <input type="text" placeholder="Имя">
+                        <input type="text" placeholder="Номер телефона">
+                    </div>
+                    <button class="banner_btn">Позвоните мне</button>
+                    <p class="form_info">
+                        Отправляя заявку, вы соглашаетесь на обработку персональных данных
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="grid_card grid_card_bottom">
+        <div class="sort_cards">
+            <div class="container">
+                <div class="card">
+                    <div class="card_img">
+                        <div class="image_texts">
+                            <p class="image_text">
+                                Лучшее предложение
+                            </p>
+                            <p class="image_text">
+                                Скоро в продаже
+                            </p>
+                            <p class="image_text">
+                                Дом сдан
+                            </p>
+                        </div>
+                        <div class="image_rating">
+                            <div class="icon icon_rating">
+
+                            </div>
+                            4.6
+                            <div class="rating_col_reviews">
+                                24 отзыва
+                            </div>
+                        </div>
+                        <img src="img/cardPhoto.png" alt="">
+                    </div>
+                    <div class="card_info">
+                        <p class="card_title">
+                            ЖК Gagarin Residense
+                        </p>
+                        <div class="card_map">
+                            <div class="icon icon_map"></div> 
+                            <p>г. Челябинск р-н Советский</p>
+                        </div>
+                        <div class="card_price">
+                            <p class="card_price_title">
+                                Стоимость
+                            </p>
+                            <div class="price_num">
+                                <p class="from_price">2 963 905 ₽ </p>
+                                <div class="line"></div>
+                                <p class="to_price">4 866 903 ₽ </p>
+                            </div>
+                            <div class="square_num">
+                                <p class="from_square">45 000 ₽ </p>
+                                <div class="line"></div>
+                                <p class="to_square">65 000 ₽ за м2 </p>
+                            </div>
+                            <div class="card_status">
+                                <div class="card_status_title">
+                                    Статус
+                                </div>
+                                <div class="term_status">
+                                    <p>Срок сдачи: II кв. 2021</p>
+                                    <p class="number">
+                                        56 объявлений
+                                    </p>
+                                </div>
+                            </div>
+                            <a class="card_btn">Позвоните мне</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card_img">
+                        <div class="image_texts">
+                            <p class="image_text">
+                                Лучшее предложение
+                            </p>
+                            <p class="image_text">
+                                Скоро в продаже
+                            </p>
+                            <p class="image_text">
+                                Дом сдан
+                            </p>
+                        </div>
+                        <div class="image_rating">
+                            <div class="icon icon_rating">
+
+                            </div>
+                            4.6
+                            <div class="rating_col_reviews">
+                                24 отзыва
+                            </div>
+                        </div>
+                        <img src="img/cardPhoto.png" alt="">
+                    </div>
+                    <div class="card_info">
+                        <p class="card_title">
+                            ЖК Gagarin Residense
+                        </p>
+                        <div class="card_map">
+                            <div class="icon icon_map"></div> 
+                            <p>г. Челябинск р-н Советский</p>
+                        </div>
+                        <div class="card_price">
+                            <p class="card_price_title">
+                                Стоимость
+                            </p>
+                            <div class="price_num">
+                                <p class="from_price">2 963 905 ₽ </p>
+                                <div class="line"></div>
+                                <p class="to_price">4 866 903 ₽ </p>
+                            </div>
+                            <div class="square_num">
+                                <p class="from_square">45 000 ₽ </p>
+                                <div class="line"></div>
+                                <p class="to_square">65 000 ₽ за м2 </p>
+                            </div>
+                            <div class="card_status">
+                                <div class="card_status_title">
+                                    Статус
+                                </div>
+                                <div class="term_status">
+                                    <p>Срок сдачи: II кв. 2021</p>
+                                    <p class="number">
+                                        56 объявлений
+                                    </p>
+                                </div>
+                            </div>
+                            <a class="card_btn">Позвоните мне</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card_img">
+                        <div class="image_texts">
+                            <p class="image_text">
+                                Лучшее предложение
+                            </p>
+                            <p class="image_text">
+                                Скоро в продаже
+                            </p>
+                            <p class="image_text">
+                                Дом сдан
+                            </p>
+                        </div>
+                        <div class="image_rating">
+                            <div class="icon icon_rating">
+
+                            </div>
+                            4.6
+                            <div class="rating_col_reviews">
+                                24 отзыва
+                            </div>
+                        </div>
+                        <img src="img/cardPhoto.png" alt="">
+                    </div>
+                    <div class="card_info">
+                        <p class="card_title">
+                            ЖК Gagarin Residense
+                        </p>
+                        <div class="card_map">
+                            <div class="icon icon_map"></div> 
+                            <p>г. Челябинск р-н Советский</p>
+                        </div>
+                        <div class="card_price">
+                            <p class="card_price_title">
+                                Стоимость
+                            </p>
+                            <div class="price_num">
+                                <p class="from_price">2 963 905 ₽ </p>
+                                <div class="line"></div>
+                                <p class="to_price">4 866 903 ₽ </p>
+                            </div>
+                            <div class="square_num">
+                                <p class="from_square">45 000 ₽ </p>
+                                <div class="line"></div>
+                                <p class="to_square">65 000 ₽ за м2 </p>
+                            </div>
+                            <div class="card_status">
+                                <div class="card_status_title">
+                                    Статус
+                                </div>
+                                <div class="term_status">
+                                    <p>Жилой комплекс сдан</p>
+                                    <p class="number">
+                                        Пока нет в продаже
+                                    </p>
+                                </div>
+                            </div>
+                            <a class="card_btn">Узнать подробности</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card_img">
+                        <div class="image_texts">
+                            <p class="image_text">
+                                Лучшее предложение
+                            </p>
+                            <p class="image_text">
+                                Скоро в продаже
+                            </p>
+                            <p class="image_text">
+                                Дом сдан
+                            </p>
+                        </div>
+                        <div class="image_rating">
+                            <div class="icon icon_rating">
+
+                            </div>
+                            4.6
+                            <div class="rating_col_reviews">
+                                24 отзыва
+                            </div>
+                        </div>
+                        <img src="img/cardPhoto.png" alt="">
+                    </div>
+                    <div class="card_info">
+                        <p class="card_title">
+                            ЖК Gagarin Residense
+                        </p>
+                        <div class="card_map">
+                            <div class="icon icon_map"></div> 
+                            <p>г. Челябинск р-н Советский</p>
+                        </div>
+                        <div class="card_price">
+                            <p class="card_price_title">
+                                Стоимость
+                            </p>
+                            <div class="price_num">
+                                <p class="from_price">2 963 905 ₽ </p>
+                                <div class="line"></div>
+                                <p class="to_price">4 866 903 ₽ </p>
+                            </div>
+                            <div class="square_num">
+                                <p class="from_square">45 000 ₽ </p>
+                                <div class="line"></div>
+                                <p class="to_square">65 000 ₽ за м2 </p>
+                            </div>
+                            <div class="card_status">
+                                <div class="card_status_title">
+                                    Статус
+                                </div>
+                                <div class="term_status">
+                                    <p>Срок сдачи: II кв. 2021</p>
+                                    <p class="number">
+                                        56 объявлений
+                                    </p>
+                                </div>
+                            </div>
+                            <a class="card_btn">Позвоните мне</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card_img">
+                        <div class="image_texts">
+                            <p class="image_text">
+                                Лучшее предложение
+                            </p>
+                            <p class="image_text">
+                                Скоро в продаже
+                            </p>
+                            <p class="image_text">
+                                Дом сдан
+                            </p>
+                        </div>
+                        <div class="image_rating">
+                            <div class="icon icon_rating">
+
+                            </div>
+                            4.6
+                            <div class="rating_col_reviews">
+                                24 отзыва
+                            </div>
+                        </div>
+                        <img src="img/cardPhoto.png" alt="">
+                    </div>
+                    <div class="card_info">
+                        <p class="card_title">
+                            ЖК Gagarin Residense
+                        </p>
+                        <div class="card_map">
+                            <div class="icon icon_map"></div> 
+                            <p>г. Челябинск р-н Советский</p>
+                        </div>
+                        <div class="card_price">
+                            <p class="card_price_title">
+                                Стоимость
+                            </p>
+                            <div class="price_num">
+                                <p class="from_price">2 963 905 ₽ </p>
+                                <div class="line"></div>
+                                <p class="to_price">4 866 903 ₽ </p>
+                            </div>
+                            <div class="square_num">
+                                <p class="from_square">45 000 ₽ </p>
+                                <div class="line"></div>
+                                <p class="to_square">65 000 ₽ за м2 </p>
+                            </div>
+                            <div class="card_status">
+                                <div class="card_status_title">
+                                    Статус
+                                </div>
+                                <div class="term_status">
+                                    <p>Срок сдачи: II кв. 2021</p>
+                                    <p class="number">
+                                        56 объявлений
+                                    </p>
+                                </div>
+                            </div>
+                            <a class="card_btn">Позвоните мне</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card_img">
+                        <div class="image_texts">
+                            <p class="image_text">
+                                Лучшее предложение
+                            </p>
+                            <p class="image_text">
+                                Скоро в продаже
+                            </p>
+                            <p class="image_text">
+                                Дом сдан
+                            </p>
+                        </div>
+                        <div class="image_rating">
+                            <div class="icon icon_rating">
+
+                            </div>
+                            4.6
+                            <div class="rating_col_reviews">
+                                24 отзыва
+                            </div>
+                        </div>
+                        <img src="img/cardPhoto.png" alt="">
+                    </div>
+                    <div class="card_info">
+                        <p class="card_title">
+                            ЖК Gagarin Residense
+                        </p>
+                        <div class="card_map">
+                            <div class="icon icon_map"></div> 
+                            <p>г. Челябинск р-н Советский</p>
+                        </div>
+                        <div class="card_price">
+                            <p class="card_price_title">
+                                Стоимость
+                            </p>
+                            <div class="price_num">
+                                <p class="from_price">2 963 905 ₽ </p>
+                                <div class="line"></div>
+                                <p class="to_price">4 866 903 ₽ </p>
+                            </div>
+                            <div class="square_num">
+                                <p class="from_square">45 000 ₽ </p>
+                                <div class="line"></div>
+                                <p class="to_square">65 000 ₽ за м2 </p>
+                            </div>
+                            <div class="card_status">
+                                <div class="card_status_title">
+                                    Статус
+                                </div>
+                                <div class="term_status">
+                                    <p>Срок сдачи: II кв. 2021</p>
+                                    <p class="number">
+                                        56 объявлений
+                                    </p>
+                                </div>
+                            </div>
+                            <a class="card_btn">Позвоните мне</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card_img">
+                        <div class="image_texts">
+                            <p class="image_text">
+                                Лучшее предложение
+                            </p>
+                            <p class="image_text">
+                                Скоро в продаже
+                            </p>
+                            <p class="image_text">
+                                Дом сдан
+                            </p>
+                        </div>
+                        <div class="image_rating">
+                            <div class="icon icon_rating">
+
+                            </div>
+                            4.6
+                            <div class="rating_col_reviews">
+                                24 отзыва
+                            </div>
+                        </div>
+                        <img src="img/cardPhoto.png" alt="">
+                    </div>
+                    <div class="card_info">
+                        <p class="card_title">
+                            ЖК Gagarin Residense
+                        </p>
+                        <div class="card_map">
+                            <div class="icon icon_map"></div> 
+                            <p>г. Челябинск р-н Советский</p>
+                        </div>
+                        <div class="card_price">
+                            <p class="card_price_title">
+                                Стоимость
+                            </p>
+                            <div class="price_num">
+                                <p class="from_price">2 963 905 ₽ </p>
+                                <div class="line"></div>
+                                <p class="to_price">4 866 903 ₽ </p>
+                            </div>
+                            <div class="square_num">
+                                <p class="from_square">45 000 ₽ </p>
+                                <div class="line"></div>
+                                <p class="to_square">65 000 ₽ за м2 </p>
+                            </div>
+                            <div class="card_status">
+                                <div class="card_status_title">
+                                    Статус
+                                </div>
+                                <div class="term_status">
+                                    <p>Срок сдачи: II кв. 2021</p>
+                                    <p class="number">
+                                        56 объявлений
+                                    </p>
+                                </div>
+                            </div>
+                            <a class="card_btn">Позвоните мне</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card_img">
+                        <div class="image_texts">
+                            <p class="image_text">
+                                Лучшее предложение
+                            </p>
+                            <p class="image_text">
+                                Скоро в продаже
+                            </p>
+                            <p class="image_text">
+                                Дом сдан
+                            </p>
+                        </div>
+                        <div class="image_rating">
+                            <div class="icon icon_rating">
+
+                            </div>
+                            4.6
+                            <div class="rating_col_reviews">
+                                24 отзыва
+                            </div>
+                        </div>
+                        <img src="img/cardPhoto.png" alt="">
+                    </div>
+                    <div class="card_info">
+                        <p class="card_title">
+                            ЖК Gagarin Residense
+                        </p>
+                        <div class="card_map">
+                            <div class="icon icon_map"></div> 
+                            <p>г. Челябинск р-н Советский</p>
+                        </div>
+                        <div class="card_price">
+                            <p class="card_price_title">
+                                Стоимость
+                            </p>
+                            <div class="price_num">
+                                <p class="from_price">2 963 905 ₽ </p>
+                                <div class="line"></div>
+                                <p class="to_price">4 866 903 ₽ </p>
+                            </div>
+                            <div class="square_num">
+                                <p class="from_square">45 000 ₽ </p>
+                                <div class="line"></div>
+                                <p class="to_square">65 000 ₽ за м2 </p>
+                            </div>
+                            <div class="card_status">
+                                <div class="card_status_title">
+                                    Статус
+                                </div>
+                                <div class="term_status">
+                                    <p>Срок сдачи: II кв. 2021</p>
+                                    <p class="number">
+                                        56 объявлений
+                                    </p>
+                                </div>
+                            </div>
+                            <a class="card_btn">Позвоните мне</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pagination">
+                <div class="pag_left"></div>
+                <div class="pag_num active">1</div>
+                <div class="pag_num">2</div>
+                <div class="pag_ellipsis">...</div>
+                <div class="pag_num">9</div>
+                <div class="pag_num">10</div>
+                <div class="pag_right"></div>
+            </div>
+        </div>
+    </div>
+    <div class="dignity">
+        <div class="container">
+            <h2 class="title">
+                Почему стоит выбрать нас,
+                а не конкретного застройщика?
+            </h2>
+            <p class="subtitle">
+                Мы являемся официальными партнерами
+                застройщиков в Челябинске
+            </p>
+            <div class="dignity_items">
+                <div class="dignity_item">
+                    <div class="icon degnity_true"></div>
+                    <div class="dignity_title">Знаем все плюсы и минусы</div>
+                    <div class="dignity_text">Имеес показатели качества и востребованности на рынке риэлторских услуг</div>
+                </div>
+                <div class="dignity_item">
+                    <div class="icon degnity_true"></div>
+                    <div class="dignity_title">Знаем все плюсы и минусы</div>
+                    <div class="dignity_text">Имеес показатели качества и востребованности на рынке риэлторских услуг</div>
+                </div>
+                <div class="dignity_item">
+                    <div class="icon degnity_true"></div>
+                    <div class="dignity_title">Знаем все плюсы и минусы</div>
+                    <div class="dignity_text">Имеес показатели качества и востребованности на рынке риэлторских услуг</div>
+                </div>
+                <div class="dignity_item">
+                    <div class="icon degnity_true"></div>
+                    <div class="dignity_title">Знаем все плюсы и минусы</div>
+                    <div class="dignity_text">Имеес показатели качества и востребованности на рынке риэлторских услуг</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="selection">
+        <div class="container">
+            <div class="selection_items">
+                <div class="selection_item">
+                    <div class="selection_title">
+                        Подбор ипотеки
+                    </div>
+                    <div class="selection_text">
+                        Узнай за 10 минут,
+                        какой кредит вам оформят
+                        банки
+                    </div>
+                    <a href="#" class="selection_more">
+                        подробнее
+                    </a>
+                    <img class="desk_icon" src="img/card_selection.svg" alt="">
+                    <img class="mobile_icon" src="img/select_mobile.svg" alt="">
+                </div>
+                <div class="selection_item">
+                    <div class="selection_title">
+                        Подбор квартиры
+                    </div>
+                    <div class="selection_text">
+                        Определите какая квартира
+                        вам подхолит    
+                    </div>
+                    <a href="#" class="selection_more">
+                        Узнать
+                    </a>
+                    <img class="desk_icon" src="img/card_selection_2.svg" alt="">
+                    <img class="mobile_icon" src="img/select_mobile_2.svg" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="consultation_block">
+        <div class="container">
+            <div class="consultation">
+                <p class="consultation_title mobile_icon">
+                    Нужна консультация? Свяжитесь 
+                    с ответственным специалистом  
+                </p>
+                <img class="desk_icon" src="img/consultation.png" alt="">
+                <img class="mobile_icon" src="img/consultant_mobile.png" alt="">
+                <div class="consultation_info">
+                    <p class="consultation_title desk_icon">
+                        Нужна консультация? Свяжитесь 
+                        с ответственным специалистом  
+                    </p>
+                    <p class="consultation_name">
+                        Александра Ржевская
+                    </p>
+                    <p class="consultation_profession">
+                        Специалист отдела новостройки
+                    </p>
+                    <div class="consultation_phone">
+                        <div class="icon icon_phone"></div>
+                        + 7 (985) 999 55 00
+                    </div>
+                    <div class="consultation_email">
+                        <div class="icon icon_email"></div>
+                        office@dan-invest.ru
+                    </div>
+                    <div class="consultation_messanger">
+                        <a href="#" class="consultation_viber">
+                            <div class="icon icon_viber"></div>
+                            Написать в viber
+                        </a>
+                        <a href="#" class="consultation_whatsapp">
+                            <div class="icon icon_whatsapp"></div>
+                            Написать в Whatsapp
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="dop_text">
+        <div class="container">
+            <h2 class="title">Заголовок</h2>
+            <p class="text">
+                Каждый свой день мы начинаем с вас: 
+                поддерживаем ваши стремления стать 
+                счастливыми новоселами, помогаем 
+                развить ваш бизнес, приумножаем ваши 
+                инвестиции в недвижимость. 
+                С 2004 года мы выросли из небольшой 
+                компании в одно из лидирующих в 
+                Челябинске агентств недвижимости.
+            </p>
+            <p class="text">
+                Все это время мы придерживались 
+                ключевого принципа: качество услуги 
+                важней ее стоимости. И каждая новая 
+                сделка его только подтверждает. 
+                Сегодня мы готовы предоставить полный 
+                спектр услуг по жилой и коммерческой 
+                недвижимости.
+            </p>
+            <p class="text">
+                Каждый свой день мы начинаем с вас: 
+                поддерживаем ваши стремления стать 
+                счастливыми новоселами, помогаем 
+                развить ваш бизнес, приумножаем ваши 
+                инвестиции в недвижимость. 
+                С 2004 года мы выросли из небольшой 
+                компании в одно из лидирующих в 
+                Челябинске агентств недвижимости.
+            </p>
+            <p class="text">
+                Все это время мы придерживались 
+                ключевого принципа: качество услуги 
+                важней ее стоимости. И каждая новая 
+                сделка его только подтверждает. 
+                Сегодня мы готовы предоставить полный 
+                спектр услуг по жилой и коммерческой 
+                недвижимости.
+            </p>
+            <p class="text">
+                Каждый свой день мы начинаем с вас: 
+                поддерживаем ваши стремления стать 
+                счастливыми новоселами, помогаем 
+                развить ваш бизнес, приумножаем ваши 
+                инвестиции в недвижимость. 
+                С 2004 года мы выросли из небольшой 
+                компании в одно из лидирующих в 
+                Челябинске агентств недвижимости.
+            </p>
+            <p class="text">
+                Все это время мы придерживались 
+                ключевого принципа: качество услуги 
+                важней ее стоимости. И каждая новая 
+                сделка его только подтверждает. 
+                Сегодня мы готовы предоставить полный 
+                спектр услуг по жилой и коммерческой 
+                недвижимости.
+            </p>
+            <p class="text">
+                Каждый свой день мы начинаем с вас: 
+                поддерживаем ваши стремления стать 
+                счастливыми новоселами, помогаем 
+                развить ваш бизнес, приумножаем ваши 
+                инвестиции в недвижимость. 
+                С 2004 года мы выросли из небольшой 
+                компании в одно из лидирующих в 
+                Челябинске агентств недвижимости.
+            </p>
+            <p class="text">
+                Все это время мы придерживались 
+                ключевого принципа: качество услуги 
+                важней ее стоимости. И каждая новая 
+                сделка его только подтверждает. 
+                Сегодня мы готовы предоставить полный 
+                спектр услуг по жилой и коммерческой 
+                недвижимости.
+            </p>
+        </div>
+    </div>
+    <div class="tags">
+        <div class="container">
+            <div class="tags_items">
+                <p class="tags_item">
+                    Продажа квартир — Челябинск
+                </p>
+                <p class="tags_item">
+                    Продажа коммерческой недвижимости — Челябинск
+                </p>
+                <p class="tags_item">
+                    Продажа комнат — Челябинск 
+                </p>
+                <p class="tags_item">
+                    Дома — Челябинск
+                </p>
+                <p class="tags_item">
+                    Продажа участков — Челябинск
+                </p>
+                <p class="tags_item">
+                    Новостройки и жилые комплексы — Челябинск
+                </p>
+            </div>
+            <div class="tags_items">
+                <p class="tags_item">
+                    Продажа квартир — Челябинск
+                </p>
+                <p class="tags_item">
+                    Продажа коммерческой недвижимости — Челябинск
+                </p>
+                <p class="tags_item">
+                    Продажа комнат — Челябинск 
+                </p>
+                <p class="tags_item">
+                    Дома — Челябинск
+                </p>
+                <p class="tags_item">
+                    Продажа участков — Челябинск
+                </p>
+                <p class="tags_item">
+                    Новостройки и жилые комплексы — Челябинск
+                </p>
+            </div>
+        </div>
+    </div>
+    <script src="slick/slick.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
